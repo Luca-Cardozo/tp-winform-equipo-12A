@@ -7,7 +7,7 @@ using dominio;
 
 namespace negocio
 {
-    public class ProductoNegocio
+    public class ImagenNegocio
     {
 
     }
