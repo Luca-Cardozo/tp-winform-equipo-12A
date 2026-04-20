@@ -57,8 +57,7 @@ namespace negocio
             try
             {
                 datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) " +
-                     "VALUES ('" + ArticuloNuevo.Codigo + "', '" + ArticuloNuevo.Nombre + "', '" + ArticuloNuevo.Descripcion + "', " +
-                     ArticuloNuevo.Marca.Id + ", " + ArticuloNuevo.Categoria.Id + ", " + ArticuloNuevo.Precio + ")");
+                     "VALUES (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @Precio");
 
                 datos.setearParametro("@Codigo", ArticuloNuevo.Codigo);
                 datos.setearParametro("@Nombre", ArticuloNuevo.Nombre);
@@ -78,8 +77,6 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-
-
 
 
         public void modificar(Articulo Articulomodificado)

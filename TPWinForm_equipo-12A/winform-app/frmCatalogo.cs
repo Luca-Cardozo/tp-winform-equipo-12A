@@ -63,12 +63,11 @@ namespace winform_app
             frmAltaModificacionArticulo alta = new frmAltaModificacionArticulo();
             alta.ShowDialog();
             cargar();
-
         }
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            if (dgvArticulos.CurrentRow == null)
+            if (dgvArticulos.CurrentRow == null || dgvArticulos.CurrentRow.DataBoundItem == null)
             {
                 MessageBox.Show("Seleccioná un artículo primero");
                 return;
@@ -86,7 +85,7 @@ namespace winform_app
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
-            if (dgvArticulos.CurrentRow == null)
+            if (dgvArticulos.CurrentRow == null || dgvArticulos.CurrentRow.DataBoundItem == null)
             {
                 MessageBox.Show("Seleccioná un artículo primero");
                 return;
@@ -99,17 +98,26 @@ namespace winform_app
                 MessageBoxIcon.Warning
             );
 
-            if (respuesta == DialogResult.Yes)
+            try
             {
-                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                if (respuesta == DialogResult.Yes)
+                {
+                    Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
 
-                ArticuloNegocio negocio = new ArticuloNegocio();
-                negocio.eliminar(seleccionado.Id);
+                    ArticuloNegocio negocio = new ArticuloNegocio();
+                    negocio.eliminar(seleccionado.Id);
 
-                MessageBox.Show("Eliminado correctamente");
+                    MessageBox.Show("Eliminado correctamente");
 
-                cargar();
+                    cargar();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            
         }
 
         private void btnFiltroRapido_Click(object sender, EventArgs e)
@@ -121,8 +129,25 @@ namespace winform_app
             if (filtro != "")
             {
                 listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
+        }
+
+        private void txtFiltroRapido_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
 
 
+            string filtro = txtFiltroRapido.Text;
+            if (filtro != "")
+            {
+                listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()));
             }
             else
             {
