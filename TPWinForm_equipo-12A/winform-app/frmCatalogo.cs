@@ -86,7 +86,30 @@ namespace winform_app
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
+            if (dgvArticulos.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccioná un artículo primero");
+                return;
+            }
 
+            DialogResult respuesta = MessageBox.Show(
+                "¿Seguro que querés eliminar este artículo?",
+                "Eliminar",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (respuesta == DialogResult.Yes)
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                ArticuloNegocio negocio = new ArticuloNegocio();
+                negocio.eliminar(seleccionado.Id);
+
+                MessageBox.Show("Eliminado correctamente");
+
+                cargar();
+            }
         }
     }
 }
