@@ -222,5 +222,17 @@ namespace winform_app
             }
             return true;
         }
+
+        private void btnCargarCatalogo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cargar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
