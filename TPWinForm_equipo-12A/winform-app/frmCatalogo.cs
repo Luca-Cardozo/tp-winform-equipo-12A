@@ -57,5 +57,36 @@ namespace winform_app
             DialogResult respuesta = MessageBox.Show("¿Está seguro que desea cerrar la aplicación?", "Atención: cierre del programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (respuesta == DialogResult.No) e.Cancel = true;
         }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            frmAltaModificacionArticulo alta = new frmAltaModificacionArticulo();
+            alta.ShowDialog();
+            cargar();
+
+        }
+
+        private void btnModificarProducto_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccioná un artículo primero");
+                return;
+            }
+
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+
+            frmAltaModificacionArticulo form = new frmAltaModificacionArticulo(seleccionado);
+            form.ShowDialog();
+
+
+            cargar();
+        }
+
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

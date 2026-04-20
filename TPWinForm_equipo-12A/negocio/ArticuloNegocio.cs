@@ -48,5 +48,66 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+
+        public void agregar(Articulo ArticuloNuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) " +
+                     "VALUES ('" + ArticuloNuevo.Codigo + "', '" + ArticuloNuevo.Nombre + "', '" + ArticuloNuevo.Descripcion + "', " +
+                     ArticuloNuevo.Marca.Id + ", " + ArticuloNuevo.Categoria.Id + ", " + ArticuloNuevo.Precio + ")");
+
+                datos.setearParametro("@Codigo", ArticuloNuevo.Codigo);
+                datos.setearParametro("@Nombre", ArticuloNuevo.Nombre);
+                datos.setearParametro("@Descripcion", ArticuloNuevo.Descripcion);
+                datos.setearParametro("@IdMarca", ArticuloNuevo.Marca.Id);
+                datos.setearParametro("@IdCategoria", ArticuloNuevo.Categoria.Id);
+                datos.setearParametro("@Precio", ArticuloNuevo.Precio);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
+
+
+        public void modificar(Articulo Articulomodificado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS SET " + "Codigo = @codigo, " + "Nombre = @nombre, " + "Descripcion = @descripcion, " + "IdMarca = @idMarca, " + "IdCategoria = @idCategoria, " + "Precio = @precio " + "WHERE Id = @id");
+
+                datos.setearParametro("@Codigo", Articulomodificado.Codigo);
+                datos.setearParametro("@Nombre", Articulomodificado.Nombre);
+                datos.setearParametro("@Descripcion", Articulomodificado.Descripcion);
+                datos.setearParametro("@IdMarca", Articulomodificado.Marca.Id);
+                datos.setearParametro("@IdCategoria", Articulomodificado.Categoria.Id);
+                datos.setearParametro("@Precio", Articulomodificado.Precio);
+                datos.setearParametro("@id", Articulomodificado.Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }
