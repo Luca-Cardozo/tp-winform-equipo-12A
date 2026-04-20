@@ -111,5 +111,26 @@ namespace winform_app
                 cargar();
             }
         }
+
+        private void btnFiltroRapido_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+
+
+            string filtro = txtFiltroRapido.Text;
+            if (filtro != "")
+            {
+                listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()));
+
+
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
+        }
     }
 }

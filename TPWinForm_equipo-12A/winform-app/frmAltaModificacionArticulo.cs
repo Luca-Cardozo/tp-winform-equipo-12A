@@ -37,7 +37,7 @@ namespace winform_app
             articulo.Codigo = txtCodigo.Text;
             articulo.Nombre = txtNombre.Text;
             articulo.Descripcion = txtDescripcion.Text;
-
+            /// estan preestablecidos hasta que se cree el ambde cada uno
             articulo.Marca = new Marca();
             articulo.Marca.Id = 1;
 
