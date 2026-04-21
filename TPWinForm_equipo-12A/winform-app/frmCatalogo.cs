@@ -23,6 +23,11 @@ namespace winform_app
         private void frmCatalogo_Load(object sender, EventArgs e)
         {
             cargar();
+            cboCampo.Items.Add("Código");
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Marca");
+            cboCampo.Items.Add("Categoría");
+            cboCampo.Items.Add("Precio");
         }
 
         private void cargar()
@@ -38,7 +43,7 @@ namespace winform_app
                 dgvArticulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvArticulos.ColumnHeadersHeight = 30;
                 dgvArticulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-                ocultarColumnas();
+                ocultarColumnas();                
             }
             catch (Exception ex)
             {
@@ -63,12 +68,11 @@ namespace winform_app
             frmAltaModificacionArticulo alta = new frmAltaModificacionArticulo();
             alta.ShowDialog();
             cargar();
-
         }
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            if (dgvArticulos.CurrentRow == null)
+            if (dgvArticulos.CurrentRow == null || dgvArticulos.CurrentRow.DataBoundItem == null)
             {
                 MessageBox.Show("Seleccioná un artículo primero");
                 return;
@@ -86,7 +90,7 @@ namespace winform_app
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
-            if (dgvArticulos.CurrentRow == null)
+            if (dgvArticulos.CurrentRow == null || dgvArticulos.CurrentRow.DataBoundItem == null)
             {
                 MessageBox.Show("Seleccioná un artículo primero");
                 return;
@@ -99,20 +103,49 @@ namespace winform_app
                 MessageBoxIcon.Warning
             );
 
-            if (respuesta == DialogResult.Yes)
+            try
             {
-                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                if (respuesta == DialogResult.Yes)
+                {
+                    Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
 
-                ArticuloNegocio negocio = new ArticuloNegocio();
-                negocio.eliminar(seleccionado.Id);
+                    ArticuloNegocio negocio = new ArticuloNegocio();
+                    negocio.eliminar(seleccionado.Id);
 
-                MessageBox.Show("Eliminado correctamente");
+                    MessageBox.Show("Eliminado correctamente");
 
-                cargar();
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                if (validarFiltro())
+                    return;
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltro.Text;
+                dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
+                ocultarColumnas();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
-        private void btnFiltroRapido_Click(object sender, EventArgs e)
+        private void txtFiltroRapido_TextChanged(object sender, EventArgs e)
         {
             List<Articulo> listaFiltrada;
 
@@ -121,8 +154,6 @@ namespace winform_app
             if (filtro != "")
             {
                 listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()));
-
-
             }
             else
             {
@@ -131,6 +162,77 @@ namespace winform_app
 
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltrada;
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboCampo.SelectedItem.ToString();
+            if (opcion == "Precio")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Mayor o igual a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Menor o igual a");
+                cboCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Empieza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+            }
+        }
+
+        public bool validarFiltro()
+        {
+            if (cboCampo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor seleccione un campo para filtrar", "Atención campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+            if (cboCriterio.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor seleccione un criterio para filtrar", "Atención criterio vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+            if (cboCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrEmpty((txtFiltro.Text)))
+                {
+                    MessageBox.Show("Por favor, ingrese un número para filtrar", "Atención filtro vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return true;
+                }
+                if (!(soloNumeros(txtFiltro.Text)))
+                {
+                    MessageBox.Show("Por favor, ingrese solo números", "Atención filtro vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
+        }
+
+        private void btnCargarCatalogo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cargar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
