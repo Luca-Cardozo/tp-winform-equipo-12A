@@ -34,9 +34,41 @@ namespace winform_app
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
             ArticuloNegocio negocio = new ArticuloNegocio();
+
             try
             {
+                if (chequearVacio(txtCodigo.Text))
+                {
+                    MessageBox.Show("El código es obligatorio");
+                    return;
+                }
+
+                if (!int.TryParse(txtCodigo.Text, out _))
+                {
+                    MessageBox.Show("El código debe ser numérico");
+                    return;
+                }
+
+                if (chequearVacio(txtNombre.Text))
+                {
+                    MessageBox.Show("El nombre es obligatorio");
+                    return;
+                }
+
+                if (chequearVacio(txtDescripcion.Text))
+                {
+                    MessageBox.Show("La descripción es obligatoria");
+                    return;
+                }
+
+                if (chequearVacio(txtPrecio.Text))
+                {
+                    MessageBox.Show("El precio es obligatorio");
+                    return;
+                }
+
                 if (articulo == null)
                     articulo = new Articulo();
 
@@ -59,7 +91,6 @@ namespace winform_app
             {
                 MessageBox.Show(ex.ToString());
             }
-            
         }
 
         private void btnCncelar_Click(object sender, EventArgs e)
