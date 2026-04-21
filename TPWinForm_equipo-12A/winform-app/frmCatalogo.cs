@@ -162,6 +162,8 @@ namespace winform_app
 
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltrada;
+            dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "C2";
+            ocultarColumnas();
         }
 
         private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
