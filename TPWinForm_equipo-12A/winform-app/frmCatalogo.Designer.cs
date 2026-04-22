@@ -86,6 +86,7 @@
             this.dgvArticulos.Size = new System.Drawing.Size(573, 197);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.TabStop = false;
+            this.dgvArticulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellDoubleClick);
             // 
             // btnAgregarProducto
             // 
@@ -242,7 +243,7 @@
             // tsmCat
             // 
             this.tsmCat.Name = "tsmCat";
-            this.tsmCat.Size = new System.Drawing.Size(180, 22);
+            this.tsmCat.Size = new System.Drawing.Size(172, 22);
             this.tsmCat.Text = "Agregar/Modificar";
             this.tsmCat.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
@@ -257,7 +258,7 @@
             // tsmMar
             // 
             this.tsmMar.Name = "tsmMar";
-            this.tsmMar.Size = new System.Drawing.Size(180, 22);
+            this.tsmMar.Size = new System.Drawing.Size(172, 22);
             this.tsmMar.Text = "Agregar/Modificar";
             this.tsmMar.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 

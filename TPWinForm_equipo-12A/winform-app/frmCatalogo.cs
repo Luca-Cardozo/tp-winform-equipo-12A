@@ -258,5 +258,24 @@ namespace winform_app
             frm.ShowDialog();
             // Helper.MostrarGrilla(dgvArticulos);
         }
+
+        private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Articulo artSeleccionado = null;
+            if (e.RowIndex >= 0)
+            {
+
+                artSeleccionado = (Articulo)dgvArticulos.Rows[e.RowIndex].DataBoundItem;
+            }
+            if (artSeleccionado != null)
+            {
+                frmAltaModificacionArticulo formAltaArticulo = new frmAltaModificacionArticulo(artSeleccionado);
+                formAltaArticulo.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un articulo Válido");
+            }
+        }
     }
 }
