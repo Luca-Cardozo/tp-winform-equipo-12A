@@ -14,6 +14,7 @@ namespace winform_app
 {
     public partial class frmCatalogo : Form
     {
+        private Articulo articulo = null;
         private List<Articulo> listaArticulos;
         public frmCatalogo()
         {
@@ -28,6 +29,11 @@ namespace winform_app
             cboCampo.Items.Add("Marca");
             cboCampo.Items.Add("Categoría");
             cboCampo.Items.Add("Precio");
+
+
+
+
+
         }
 
         private void cargar()
@@ -43,7 +49,7 @@ namespace winform_app
                 dgvArticulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvArticulos.ColumnHeadersHeight = 30;
                 dgvArticulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-                ocultarColumnas();                
+                ocultarColumnas();
             }
             catch (Exception ex)
             {
@@ -122,7 +128,7 @@ namespace winform_app
                 MessageBox.Show(ex.ToString());
             }
 
-            
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -235,6 +241,22 @@ namespace winform_app
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string data = ctsCat.Text;
+            Form frm = new frmAltaModificacionCategoriaMarca(data);
+            frm.ShowDialog();
+            // Helper.MostrarGrilla(dgvArticulos);
+        }
+
+        private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string data = ctsMar.Text;
+            Form frm = new frmAltaModificacionCategoriaMarca(data);
+            frm.ShowDialog();
+            // Helper.MostrarGrilla(dgvArticulos);
         }
     }
 }

@@ -36,5 +36,57 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public void agregar(string marcaNueva)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO MARCAS (Descripcion) " +
+                     "VALUES (@Descripcion)");
+
+
+                datos.setearParametro("@Descripcion", marcaNueva);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void modificar(Marca marcaModificada)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+
+                datos.setearConsulta("UPDATE MARCAS set Descripcion=@Descripcion WHERE Id=@Id");
+
+
+                datos.setearParametro("@Id", marcaModificada.Id);
+
+                datos.setearParametro("@Descripcion", marcaModificada.Descripcion);
+
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
+
+
 }

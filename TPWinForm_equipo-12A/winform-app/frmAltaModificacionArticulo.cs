@@ -14,7 +14,7 @@ namespace winform_app
 {
     public partial class frmAltaModificacionArticulo : Form
     {
-        
+
         private Articulo articulo = null;
         public frmAltaModificacionArticulo()
         {
@@ -129,6 +129,8 @@ namespace winform_app
             {
                 MessageBox.Show(ex.ToString());
             }
-        }        
+        }
+
+
     }
 }
