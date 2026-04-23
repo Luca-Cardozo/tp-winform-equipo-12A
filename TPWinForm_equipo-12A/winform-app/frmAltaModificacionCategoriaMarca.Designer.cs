@@ -42,7 +42,7 @@
             // 
             this.dgvMC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMC.Location = new System.Drawing.Point(211, 108);
-            this.dgvMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvMC.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMC.MultiSelect = false;
             this.dgvMC.Name = "dgvMC";
             this.dgvMC.RowHeadersWidth = 51;
@@ -53,7 +53,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(269, 68);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 28);
             this.btnAgregar.TabIndex = 1;
@@ -64,7 +64,7 @@
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(269, 349);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 28);
             this.btnModificar.TabIndex = 2;
@@ -75,7 +75,7 @@
             // txtAgregar
             // 
             this.txtAgregar.Location = new System.Drawing.Point(211, 24);
-            this.txtAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.txtAgregar.Name = "txtAgregar";
             this.txtAgregar.Size = new System.Drawing.Size(229, 22);
             this.txtAgregar.TabIndex = 3;
@@ -83,7 +83,7 @@
             // txtModificar
             // 
             this.txtModificar.Location = new System.Drawing.Point(211, 307);
-            this.txtModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtModificar.Margin = new System.Windows.Forms.Padding(4);
             this.txtModificar.Name = "txtModificar";
             this.txtModificar.Size = new System.Drawing.Size(229, 22);
             this.txtModificar.TabIndex = 4;
@@ -91,7 +91,7 @@
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(564, 359);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(100, 28);
             this.btnSalir.TabIndex = 5;
@@ -122,7 +122,8 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvMC);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmAltaModificacionCategoriaMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

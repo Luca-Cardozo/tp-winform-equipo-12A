@@ -81,6 +81,9 @@
     <EmbeddedResource Include="frmCatalogo.resx">
       <DependentUpon>frmCatalogo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDetalleArticulo.resx">
+      <DependentUpon>frmDetalleArticulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

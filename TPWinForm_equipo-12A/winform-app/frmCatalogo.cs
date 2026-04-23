@@ -313,7 +313,23 @@ namespace winform_app
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (dgvArticulos.CurrentRow == null || dgvArticulos.CurrentRow.DataBoundItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar una fila para ver el detalle del artículo", "Atención: detalle del producto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                Articulo seleccionado;
+                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                frmDetalleArticulo ventanaDetalle = new frmDetalleArticulo(seleccionado);
+                ventanaDetalle.ShowDialog();
+                cargar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
