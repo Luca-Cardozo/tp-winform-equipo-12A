@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnModificarProducto = new System.Windows.Forms.Button();
@@ -62,184 +62,228 @@
             // dgvArticulos
             // 
             this.dgvArticulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvArticulos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle32;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvArticulos.Location = new System.Drawing.Point(201, 165);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvArticulos.GridColor = System.Drawing.Color.Gainsboro;
+            this.dgvArticulos.Location = new System.Drawing.Point(239, 198);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.RowTemplate.Height = 24;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(764, 242);
+            this.dgvArticulos.Size = new System.Drawing.Size(860, 303);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.TabStop = false;
             this.dgvArticulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellDoubleClick);
             // 
             // btnAgregarProducto
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(33, 167);
-            this.btnAgregarProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarProducto.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnAgregarProducto.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProducto.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarProducto.Location = new System.Drawing.Point(40, 206);
+            this.btnAgregarProducto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(143, 34);
+            this.btnAgregarProducto.Size = new System.Drawing.Size(161, 43);
             this.btnAgregarProducto.TabIndex = 1;
             this.btnAgregarProducto.Text = "Agregar Producto";
-            this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.UseVisualStyleBackColor = false;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // btnModificarProducto
             // 
-            this.btnModificarProducto.Location = new System.Drawing.Point(36, 222);
-            this.btnModificarProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarProducto.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnModificarProducto.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnModificarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarProducto.ForeColor = System.Drawing.Color.White;
+            this.btnModificarProducto.Location = new System.Drawing.Point(40, 277);
+            this.btnModificarProducto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnModificarProducto.Name = "btnModificarProducto";
-            this.btnModificarProducto.Size = new System.Drawing.Size(140, 36);
+            this.btnModificarProducto.Size = new System.Drawing.Size(158, 45);
             this.btnModificarProducto.TabIndex = 2;
             this.btnModificarProducto.Text = "Modificar Producto";
-            this.btnModificarProducto.UseVisualStyleBackColor = true;
+            this.btnModificarProducto.UseVisualStyleBackColor = false;
             this.btnModificarProducto.Click += new System.EventHandler(this.btnModificarProducto_Click);
             // 
             // btnEliminarProducto
             // 
-            this.btnEliminarProducto.Location = new System.Drawing.Point(36, 278);
-            this.btnEliminarProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarProducto.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnEliminarProducto.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnEliminarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarProducto.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarProducto.Location = new System.Drawing.Point(40, 343);
+            this.btnEliminarProducto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
-            this.btnEliminarProducto.Size = new System.Drawing.Size(139, 34);
+            this.btnEliminarProducto.Size = new System.Drawing.Size(157, 43);
             this.btnEliminarProducto.TabIndex = 3;
             this.btnEliminarProducto.Text = "Eliminar Producto";
-            this.btnEliminarProducto.UseVisualStyleBackColor = true;
+            this.btnEliminarProducto.UseVisualStyleBackColor = false;
             this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
             // lblFiltroRapido
             // 
-            this.lblFiltroRapido.AutoSize = true;
-            this.lblFiltroRapido.Location = new System.Drawing.Point(199, 132);
+            this.lblFiltroRapido.BackColor = System.Drawing.Color.SeaGreen;
+            this.lblFiltroRapido.ForeColor = System.Drawing.Color.White;
+            this.lblFiltroRapido.Location = new System.Drawing.Point(224, 165);
+            this.lblFiltroRapido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFiltroRapido.Name = "lblFiltroRapido";
-            this.lblFiltroRapido.Size = new System.Drawing.Size(112, 16);
+            this.lblFiltroRapido.Size = new System.Drawing.Size(135, 24);
             this.lblFiltroRapido.TabIndex = 4;
             this.lblFiltroRapido.Text = "Filtrar por nombre";
+            this.lblFiltroRapido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtFiltroRapido
             // 
-            this.txtFiltroRapido.Location = new System.Drawing.Point(316, 132);
-            this.txtFiltroRapido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFiltroRapido.BackColor = System.Drawing.Color.White;
+            this.txtFiltroRapido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFiltroRapido.ForeColor = System.Drawing.Color.LightGray;
+            this.txtFiltroRapido.Location = new System.Drawing.Point(356, 165);
+            this.txtFiltroRapido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFiltroRapido.Name = "txtFiltroRapido";
-            this.txtFiltroRapido.Size = new System.Drawing.Size(209, 22);
+            this.txtFiltroRapido.Size = new System.Drawing.Size(234, 27);
             this.txtFiltroRapido.TabIndex = 5;
             this.txtFiltroRapido.TextChanged += new System.EventHandler(this.txtFiltroRapido_TextChanged);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(1009, 448);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(1122, 560);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(85, 29);
             this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblCampo
             // 
-            this.lblCampo.AutoSize = true;
-            this.lblCampo.Location = new System.Drawing.Point(201, 446);
+            this.lblCampo.BackColor = System.Drawing.Color.SeaGreen;
+            this.lblCampo.ForeColor = System.Drawing.Color.White;
+            this.lblCampo.Location = new System.Drawing.Point(226, 557);
+            this.lblCampo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCampo.Name = "lblCampo";
-            this.lblCampo.Size = new System.Drawing.Size(54, 16);
+            this.lblCampo.Size = new System.Drawing.Size(77, 24);
             this.lblCampo.TabIndex = 7;
             this.lblCampo.Text = "Campo:";
+            this.lblCampo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblCriterio
             // 
-            this.lblCriterio.AutoSize = true;
-            this.lblCriterio.Location = new System.Drawing.Point(484, 448);
+            this.lblCriterio.BackColor = System.Drawing.Color.SeaGreen;
+            this.lblCriterio.ForeColor = System.Drawing.Color.White;
+            this.lblCriterio.Location = new System.Drawing.Point(544, 560);
+            this.lblCriterio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCriterio.Name = "lblCriterio";
-            this.lblCriterio.Size = new System.Drawing.Size(52, 16);
+            this.lblCriterio.Size = new System.Drawing.Size(77, 24);
             this.lblCriterio.TabIndex = 8;
             this.lblCriterio.Text = "Criterio:";
+            this.lblCriterio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblFiltro
             // 
-            this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(748, 449);
+            this.lblFiltro.BackColor = System.Drawing.Color.SeaGreen;
+            this.lblFiltro.ForeColor = System.Drawing.Color.White;
+            this.lblFiltro.Location = new System.Drawing.Point(816, 560);
+            this.lblFiltro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(39, 16);
+            this.lblFiltro.Size = new System.Drawing.Size(77, 24);
             this.lblFiltro.TabIndex = 9;
             this.lblFiltro.Text = "Filtro:";
+            this.lblFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFiltro.Click += new System.EventHandler(this.lblFiltro_Click);
             // 
             // cboCampo
             // 
             this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCampo.FormattingEnabled = true;
-            this.cboCampo.Location = new System.Drawing.Point(261, 446);
-            this.cboCampo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboCampo.Location = new System.Drawing.Point(293, 557);
+            this.cboCampo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cboCampo.Name = "cboCampo";
-            this.cboCampo.Size = new System.Drawing.Size(148, 24);
+            this.cboCampo.Size = new System.Drawing.Size(166, 28);
             this.cboCampo.TabIndex = 10;
             this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
             // 
             // cboCriterio
             // 
+            this.cboCriterio.BackColor = System.Drawing.Color.White;
             this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCriterio.FormattingEnabled = true;
-            this.cboCriterio.Location = new System.Drawing.Point(543, 448);
-            this.cboCriterio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboCriterio.Location = new System.Drawing.Point(611, 560);
+            this.cboCriterio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cboCriterio.Name = "cboCriterio";
-            this.cboCriterio.Size = new System.Drawing.Size(148, 24);
+            this.cboCriterio.Size = new System.Drawing.Size(166, 28);
             this.cboCriterio.TabIndex = 11;
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(793, 448);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFiltro.BackColor = System.Drawing.Color.White;
+            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFiltro.Location = new System.Drawing.Point(892, 560);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(173, 22);
+            this.txtFiltro.Size = new System.Drawing.Size(194, 27);
             this.txtFiltro.TabIndex = 12;
             // 
             // btnCargarCatalogo
             // 
-            this.btnCargarCatalogo.Location = new System.Drawing.Point(36, 335);
-            this.btnCargarCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCargarCatalogo.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCargarCatalogo.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnCargarCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarCatalogo.ForeColor = System.Drawing.Color.White;
+            this.btnCargarCatalogo.Location = new System.Drawing.Point(40, 419);
+            this.btnCargarCatalogo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCargarCatalogo.Name = "btnCargarCatalogo";
-            this.btnCargarCatalogo.Size = new System.Drawing.Size(139, 50);
+            this.btnCargarCatalogo.Size = new System.Drawing.Size(157, 63);
             this.btnCargarCatalogo.TabIndex = 13;
             this.btnCargarCatalogo.Text = "Cargar catálogo completo";
-            this.btnCargarCatalogo.UseVisualStyleBackColor = true;
+            this.btnCargarCatalogo.UseVisualStyleBackColor = false;
             this.btnCargarCatalogo.Click += new System.EventHandler(this.btnCargarCatalogo_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.SeaGreen;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctsCat,
             this.ctsMar});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1139, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1282, 48);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // ctsCat
             // 
+            this.ctsCat.BackColor = System.Drawing.Color.SeaGreen;
             this.ctsCat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmCat,
             this.eliminarToolStripMenuItem1});
+            this.ctsCat.ForeColor = System.Drawing.Color.White;
             this.ctsCat.Name = "ctsCat";
             this.ctsCat.Size = new System.Drawing.Size(88, 24);
             this.ctsCat.Text = "Categoría";
@@ -276,15 +320,18 @@
             // 
             // ctsMar
             // 
+            this.ctsMar.BackColor = System.Drawing.Color.SeaGreen;
             this.ctsMar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmMar,
             this.eliminarToolStripMenuItem});
+            this.ctsMar.ForeColor = System.Drawing.Color.White;
             this.ctsMar.Name = "ctsMar";
-            this.ctsMar.Size = new System.Drawing.Size(64, 24);
+            this.ctsMar.Size = new System.Drawing.Size(64, 42);
             this.ctsMar.Text = "Marca";
             // 
             // tsmMar
             // 
+            this.tsmMar.BackColor = System.Drawing.Color.SeaGreen;
             this.tsmMar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarToolStripMenuItem1,
             this.modificarToolStripMenuItem1});
@@ -295,19 +342,20 @@
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(156, 26);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click_1);
             // 
             // modificarToolStripMenuItem1
             // 
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(156, 26);
             this.modificarToolStripMenuItem1.Text = "Modificar";
             this.modificarToolStripMenuItem1.Click += new System.EventHandler(this.modificarToolStripMenuItem1_Click);
             // 
             // eliminarToolStripMenuItem
             // 
+            this.eliminarToolStripMenuItem.BackColor = System.Drawing.Color.SeaGreen;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
@@ -315,9 +363,10 @@
             // 
             // frmCatalogo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1139, 553);
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(1282, 691);
             this.Controls.Add(this.btnCargarCatalogo);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.cboCriterio);
@@ -333,8 +382,10 @@
             this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "frmCatalogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

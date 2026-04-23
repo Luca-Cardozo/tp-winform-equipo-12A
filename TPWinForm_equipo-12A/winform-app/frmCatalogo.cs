@@ -311,6 +311,9 @@ namespace winform_app
             }            
         }
 
-  
+        private void lblFiltro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
