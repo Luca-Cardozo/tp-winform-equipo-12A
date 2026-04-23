@@ -29,11 +29,6 @@ namespace winform_app
             cboCampo.Items.Add("Marca");
             cboCampo.Items.Add("Categoría");
             cboCampo.Items.Add("Precio");
-
-
-
-
-
         }
 
         private void cargar()
@@ -324,6 +319,27 @@ namespace winform_app
                 seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 frmDetalleArticulo ventanaDetalle = new frmDetalleArticulo(seleccionado);
                 ventanaDetalle.ShowDialog();
+                cargar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvArticulos.CurrentRow == null || dgvArticulos.CurrentRow.DataBoundItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar una fila para administrar las imágenes del artículo", "Atención: imágenes del producto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                Articulo seleccionado;
+                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                frmAltaModificacionImagen ventanaImagenes = new frmAltaModificacionImagen(seleccionado);
+                ventanaImagenes.ShowDialog();
                 cargar();
             }
             catch (Exception ex)

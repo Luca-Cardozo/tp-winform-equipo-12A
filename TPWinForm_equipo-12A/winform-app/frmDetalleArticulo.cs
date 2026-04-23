@@ -14,12 +14,12 @@ namespace winform_app
 {
     public partial class frmDetalleArticulo : Form
     {
-        int indiceImagen = 0;
-        List<Imagen> imagenes;
+        private int indiceImagen = 0;
+        private List<Imagen> imagenes;
+        private ImagenNegocio negocio = new ImagenNegocio();
         public frmDetalleArticulo(Articulo seleccionado)
         {
-            InitializeComponent();
-            ImagenNegocio negocio = new ImagenNegocio();
+            InitializeComponent();            
             seleccionado.Imagenes = negocio.listarPorArticulo(seleccionado.Id);
             cargarImagenInicial(seleccionado.Imagenes);
             cargarDescripcion(seleccionado.Descripcion);
@@ -64,6 +64,10 @@ namespace winform_app
             {
                 pbxImagen.Load(imagenes[indiceImagen].ImagenUrl);
             }
+            else
+            {
+                 pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
+            }
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
@@ -80,6 +84,11 @@ namespace winform_app
             indiceImagen--;
             if (indiceImagen < 0) indiceImagen = imagenes.Count - 1;
             mostrarImagen();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

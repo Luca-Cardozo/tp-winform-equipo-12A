@@ -52,6 +52,12 @@
     <Compile Include="frmAltaModificacionCategoriaMarca.Designer.cs">
       <DependentUpon>frmAltaModificacionCategoriaMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAltaModificacionImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaModificacionImagen.Designer.cs">
+      <DependentUpon>frmAltaModificacionImagen.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCatalogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaModificacionCategoriaMarca.resx">
       <DependentUpon>frmAltaModificacionCategoriaMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaModificacionImagen.resx">
+      <DependentUpon>frmAltaModificacionImagen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCatalogo.resx">
       <DependentUpon>frmCatalogo.cs</DependentUpon>

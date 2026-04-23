@@ -88,6 +88,11 @@ namespace winform_app
                 dgv.DataSource = catNeg.listar();
             }
 
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Century", 12, FontStyle.Bold);
+            dgv.DefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold);
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgv.ColumnHeadersHeight = 30;
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 
             dgv.Columns["Id"].Visible = false;
 
