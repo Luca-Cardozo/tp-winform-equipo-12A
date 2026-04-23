@@ -243,39 +243,74 @@ namespace winform_app
             }
         }
 
-        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void agregarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             string data = ctsCat.Text;
-            Form frm = new frmAltaModificacionCategoriaMarca(data);
+            Form frm = new frmAltaModificacionCategoriaMarca(data, "Agregar");
             frm.ShowDialog();
-            // Helper.MostrarGrilla(dgvArticulos);
         }
 
-        private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string data = ctsCat.Text;
+            Form frm = new frmAltaModificacionCategoriaMarca(data, "Modificar");
+            frm.ShowDialog();
+        }
+
+        private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string data = ctsCat.Text;
+            Form frm = new frmAltaModificacionCategoriaMarca(data, "Eliminar");
+            frm.ShowDialog();
+        }
+
+        private void agregarToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             string data = ctsMar.Text;
-            Form frm = new frmAltaModificacionCategoriaMarca(data);
+            Form frm = new frmAltaModificacionCategoriaMarca(data, "Agregar");
             frm.ShowDialog();
-            // Helper.MostrarGrilla(dgvArticulos);
         }
+
+        private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string data = ctsMar.Text;
+            Form frm = new frmAltaModificacionCategoriaMarca(data, "Modificar");
+            frm.ShowDialog();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string data = ctsMar.Text;
+            Form frm = new frmAltaModificacionCategoriaMarca(data, "Eliminar");
+            frm.ShowDialog();
+        }
+
 
         private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Articulo artSeleccionado = null;
-            if (e.RowIndex >= 0)
+            try
             {
-
-                artSeleccionado = (Articulo)dgvArticulos.Rows[e.RowIndex].DataBoundItem;
+                Articulo artSeleccionado = null;
+                if (e.RowIndex >= 0)
+                {
+                    artSeleccionado = (Articulo)dgvArticulos.Rows[e.RowIndex].DataBoundItem;
+                }
+                if (artSeleccionado != null)
+                {
+                    frmAltaModificacionArticulo formAltaArticulo = new frmAltaModificacionArticulo(artSeleccionado);
+                    formAltaArticulo.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un articulo Válido");
+                }
             }
-            if (artSeleccionado != null)
+            catch (Exception ex)
             {
-                frmAltaModificacionArticulo formAltaArticulo = new frmAltaModificacionArticulo(artSeleccionado);
-                formAltaArticulo.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un articulo Válido");
-            }
+                MessageBox.Show(ex.ToString());
+            }            
         }
+
+  
     }
 }

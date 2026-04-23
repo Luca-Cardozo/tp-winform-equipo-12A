@@ -1,9 +1,10 @@
-﻿using System;
+﻿using dominio;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using dominio;
 
 namespace negocio
 {
@@ -82,6 +83,52 @@ namespace negocio
                 throw ex;
             }
             finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void eliminar(Marca marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+
+                datos.setearConsulta("DELETE FROM MARCAS WHERE Id=@Id");
+
+                datos.setearParametro("@Id", marca.Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public bool tieneArticulosAsociados(int idMarca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT Id FROM Articulos WHERE IdMarca = @id");
+                datos.setearParametro("@id", idMarca);
+                datos.ejecutarLectura();
+                if(datos.Lector.Read())
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally 
             {
                 datos.cerrarConexion();
             }

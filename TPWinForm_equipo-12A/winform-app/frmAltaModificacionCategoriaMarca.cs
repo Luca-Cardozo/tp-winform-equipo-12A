@@ -1,14 +1,15 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using dominio;
-using negocio;
 
 namespace winform_app
 {
@@ -24,19 +25,38 @@ namespace winform_app
             InitializeComponent();
         }
 
-        public frmAltaModificacionCategoriaMarca(string data)
+        public frmAltaModificacionCategoriaMarca(string data, string accion)
         {
             InitializeComponent();
 
             if (data == "Marca")
             {
-                dataRecibida = "MenuMarca"; //para que sae mas facil modificar el codigo en caso de necesitarlo
+                dataRecibida = "MenuMarca"; //para que sea mas facil modificar el codigo en caso de necesitarlo
                 this.Text = "Marca";
             }
             else
             {
                 dataRecibida = "MenuCategoría";
                 this.Text = "Categoría";
+            }
+            if (accion == "Agregar")
+            {
+                txtModificar.Visible = false;
+                btnModificar.Visible = false;
+                btnEliminar.Visible = false;
+            }
+            if (accion == "Modificar")
+            {
+                txtAgregar.Visible = false;
+                btnAgregar.Visible = false;
+                btnEliminar.Visible = false;
+            }
+            if (accion == "Eliminar")
+            {
+                txtAgregar.Visible = false;
+                btnAgregar.Visible = false;
+                txtModificar.Visible = false;
+                btnModificar.Visible = false;
             }
         }
 
@@ -76,52 +96,128 @@ namespace winform_app
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string dato = txtAgregar.Text;
-            if (string.IsNullOrEmpty(dato))
+            try
             {
-                MessageBox.Show("No se puede agregar un elemento vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (dataRecibida == "MenuMarca")
-            {
-                marNeg.agregar(dato);
-            }
-            else
-            {
-                catNeg.agregar(dato);
-            }
-            MostrarGrilla(dgvMC, dataRecibida);
-            txtAgregar.Text = "";
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            if (dgvMC.CurrentRow != null)
-            {
-                string dato = txtModificar.Text;
+                string dato = txtAgregar.Text;
                 if (string.IsNullOrEmpty(dato))
                 {
-                    MessageBox.Show("No se puede modificar un elemento vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede agregar un elemento vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (dataRecibida == "MenuMarca")
                 {
-                    Marca marca = (Marca)dgvMC.CurrentRow.DataBoundItem;
-                    marca.Descripcion = dato;
-                    marNeg.modificar(marca);
+                    marNeg.agregar(dato);
                 }
                 else
                 {
-                    Categoria categoria = (Categoria)dgvMC.CurrentRow.DataBoundItem;
-                    categoria.Descripcion = dato;
-                    catNeg.modificar(categoria);
+                    catNeg.agregar(dato);
                 }
                 MostrarGrilla(dgvMC, dataRecibida);
+                txtAgregar.Text = "";
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se ha seleccionado ningún elemento...");
-                return;
+                MessageBox.Show(ex.ToString());
+            }            
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvMC.CurrentRow != null && dgvMC.CurrentRow.DataBoundItem != null)
+                {
+                    string dato = txtModificar.Text;
+                    if (string.IsNullOrEmpty(dato))
+                    {
+                        MessageBox.Show("No se puede modificar un elemento vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (dataRecibida == "MenuMarca")
+                    {
+                        Marca marca = (Marca)dgvMC.CurrentRow.DataBoundItem;
+                        marca.Descripcion = dato;
+                        marNeg.modificar(marca);
+                    }
+                    else
+                    {
+                        Categoria categoria = (Categoria)dgvMC.CurrentRow.DataBoundItem;
+                        categoria.Descripcion = dato;
+                        catNeg.modificar(categoria);
+                    }
+                    MostrarGrilla(dgvMC, dataRecibida);
+                }
+                else
+                {
+                    MessageBox.Show("No se ha seleccionado ningún elemento...");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvMC.CurrentRow != null && dgvMC.CurrentRow.DataBoundItem != null)
+                {
+                    if (dataRecibida == "MenuMarca")
+                    {
+                        Marca marca = (Marca)dgvMC.CurrentRow.DataBoundItem;
+                        if (marNeg.tieneArticulosAsociados(marca.Id))
+                        {
+                            MessageBox.Show("No se puede eliminar una marca asociada a un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            DialogResult respuesta = MessageBox.Show(
+                                "¿Seguro que querés eliminar esta marca?",
+                                "Eliminar",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Warning);
+                            if (respuesta == DialogResult.Yes)
+                            {
+                                marNeg.eliminar(marca);
+                                MessageBox.Show("Marca eliminada correctamente.");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Categoria categoria = (Categoria)dgvMC.CurrentRow.DataBoundItem;
+                        if (catNeg.tieneArticulosAsociados(categoria.Id))
+                        {
+                            MessageBox.Show("No se puede eliminar una categoría asociada a un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            DialogResult respuesta = MessageBox.Show(
+                                "¿Seguro que querés eliminar esta categoría?",
+                                "Eliminar",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Warning);
+                            if (respuesta == DialogResult.Yes)
+                            {
+                                catNeg.eliminar(categoria);
+                                MessageBox.Show("Categoría eliminada correctamente.");
+                            }
+                        }
+                    }
+                    MostrarGrilla(dgvMC, dataRecibida);
+                }
+                else
+                {
+                    MessageBox.Show("No se ha seleccionado ningún elemento...");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -129,6 +225,8 @@ namespace winform_app
         {
             this.Close();
         }
+
+        
     }
 
 }

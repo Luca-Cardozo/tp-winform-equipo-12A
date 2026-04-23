@@ -41,38 +41,38 @@ namespace winform_app
             {
                 if (chequearVacio(txtCodigo.Text))
                 {
-                    MessageBox.Show("El código es obligatorio");
+                    MessageBox.Show("El código es obligatorio", "Atención: código obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                if (!int.TryParse(txtCodigo.Text, out _))
+                if (!validarCodigo(txtCodigo.Text))
                 {
-                    MessageBox.Show("El código debe ser numérico");
                     return;
                 }
 
                 if (chequearVacio(txtNombre.Text))
                 {
-                    MessageBox.Show("El nombre es obligatorio");
-                    return;
-                }
-
-                if (chequearVacio(txtDescripcion.Text))
-                {
-                    MessageBox.Show("La descripción es obligatoria");
+                    MessageBox.Show("El nombre es obligatorio", "Atención: nombre obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 if (chequearVacio(txtPrecio.Text))
                 {
-                    MessageBox.Show("El precio es obligatorio");
+                    MessageBox.Show("El precio es obligatorio", "Atención: precio obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                if (chequearCBOVacio(cboMarca.SelectedIndex) || chequearCBOVacio(cboCategoria.SelectedIndex))
+                {
+                    MessageBox.Show("Es obligatorio seleccionar una Marca y una Categoría", "Atención: marca y categorías obligatorias", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
 
                 if (articulo == null)
                     articulo = new Articulo();
 
-                articulo.Codigo = txtCodigo.Text;
+                articulo.Codigo = txtCodigo.Text.ToUpper();
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.Marca = (Marca)cboMarca.SelectedItem;
@@ -122,7 +122,7 @@ namespace winform_app
                     txtDescripcion.Text = articulo.Descripcion;
                     cboMarca.SelectedValue = articulo.Marca.Id;
                     cboCategoria.SelectedValue = articulo.Categoria.Id;
-                    txtPrecio.Text = articulo.Precio.ToString();
+                    txtPrecio.Text = articulo.Precio.ToString("0.00");
                 }
             }
             catch (Exception ex)
@@ -131,6 +131,33 @@ namespace winform_app
             }
         }
 
+        private bool chequearCBOVacio(int indice)
+        {
+            if (indice == -1) return true;
+            else return false;
+        }
 
+        public bool validarCodigo(string codigo)
+        {
+            if (codigo.Length != 3)
+            {
+                MessageBox.Show("El código debe tener solo 3 caracteres", "Atención: código erróneo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (!(char.IsLetter(codigo[0])))
+            {
+                MessageBox.Show("El código debe comenzar con una letra", "Atención: código erróneo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (!(char.IsDigit(codigo[1])) || !(char.IsDigit(codigo[2])))
+            {
+                MessageBox.Show("El código debe tener dos números luego de la letra", "Atención: código erróneo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
