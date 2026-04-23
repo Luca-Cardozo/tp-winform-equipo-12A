@@ -22,6 +22,7 @@ namespace winform_app
 
         private void frmCatalogo_Load(object sender, EventArgs e)
         {
+            lblFechaHora.Text = DateTime.Now.ToString("F");
             cargar();
             cboCampo.Items.Add("Código");
             cboCampo.Items.Add("Nombre");
@@ -340,6 +341,55 @@ namespace winform_app
                 frmAltaModificacionImagen ventanaImagenes = new frmAltaModificacionImagen(seleccionado);
                 ventanaImagenes.ShowDialog();
                 cargar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            lblFechaHora.Text = DateTime.Now.ToString("F");
+        }
+
+        private void cambiarCursorBotones(Button boton)
+        {
+            if (dgvArticulos.CurrentRow == null || dgvArticulos.CurrentRow.DataBoundItem == null)
+                boton.Cursor = Cursors.No;
+            else
+                boton.Cursor = Cursors.Hand;
+        }
+
+        private void btnModificarProducto_MouseEnter(object sender, EventArgs e)
+        {
+            try
+            {
+                cambiarCursorBotones(btnModificarProducto);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnEliminarProducto_MouseEnter(object sender, EventArgs e)
+        {
+            try
+            {
+                cambiarCursorBotones(btnEliminarProducto);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnDetalle_MouseEnter(object sender, EventArgs e)
+        {
+            try
+            {
+                cambiarCursorBotones(btnDetalle);
             }
             catch (Exception ex)
             {

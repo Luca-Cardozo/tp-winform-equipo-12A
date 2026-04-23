@@ -65,6 +65,7 @@
             // 
             // btnAgregarImagen
             // 
+            this.btnAgregarImagen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarImagen.Location = new System.Drawing.Point(465, 355);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
             this.btnAgregarImagen.Size = new System.Drawing.Size(182, 35);
@@ -82,6 +83,7 @@
             // 
             // btnSalir
             // 
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalir.Location = new System.Drawing.Point(864, 418);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(87, 35);
@@ -99,6 +101,7 @@
             // 
             // btnModificarImagen
             // 
+            this.btnModificarImagen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificarImagen.Location = new System.Drawing.Point(465, 400);
             this.btnModificarImagen.Name = "btnModificarImagen";
             this.btnModificarImagen.Size = new System.Drawing.Size(182, 35);
@@ -109,6 +112,7 @@
             // 
             // btnEliminarImagen
             // 
+            this.btnEliminarImagen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarImagen.Location = new System.Drawing.Point(769, 355);
             this.btnEliminarImagen.Name = "btnEliminarImagen";
             this.btnEliminarImagen.Size = new System.Drawing.Size(182, 35);

@@ -231,7 +231,33 @@ namespace winform_app
             this.Close();
         }
 
-        
+        private void dgvMC_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataRecibida == "MenuMarca")
+            {
+                Marca marca = (Marca)dgvMC.CurrentRow.DataBoundItem;
+                if (marca != null)
+                {
+                    txtModificar.Text = marca.Descripcion;
+                }
+                else
+                {
+                    txtModificar.Text = "";
+                }
+            }
+            else
+            {
+                Categoria categoria = (Categoria)dgvMC.CurrentRow.DataBoundItem;
+                if (categoria != null)
+                {
+                    txtModificar.Text = categoria.Descripcion;
+                }
+                else
+                {
+                    txtModificar.Text = "";
+                }
+            }
+        }
     }
 
 }

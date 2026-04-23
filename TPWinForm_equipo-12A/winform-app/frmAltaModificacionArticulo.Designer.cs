@@ -153,6 +153,7 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.Location = new System.Drawing.Point(313, 354);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
@@ -164,6 +165,7 @@
             // 
             // btnCncelar
             // 
+            this.btnCncelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCncelar.Location = new System.Drawing.Point(131, 353);
             this.btnCncelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCncelar.Name = "btnCncelar";
