@@ -33,6 +33,8 @@
             this.btnAgregarImagen = new System.Windows.Forms.Button();
             this.txtAgregarImagen = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.txtModificarImagen = new System.Windows.Forms.TextBox();
+            this.btnModificarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImagenes)).BeginInit();
             this.SuspendLayout();
@@ -87,11 +89,30 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // txtModificarImagen
+            // 
+            this.txtModificarImagen.Location = new System.Drawing.Point(52, 406);
+            this.txtModificarImagen.Name = "txtModificarImagen";
+            this.txtModificarImagen.Size = new System.Drawing.Size(361, 22);
+            this.txtModificarImagen.TabIndex = 6;
+            // 
+            // btnModificarImagen
+            // 
+            this.btnModificarImagen.Location = new System.Drawing.Point(465, 400);
+            this.btnModificarImagen.Name = "btnModificarImagen";
+            this.btnModificarImagen.Size = new System.Drawing.Size(182, 35);
+            this.btnModificarImagen.TabIndex = 5;
+            this.btnModificarImagen.Text = "Modificar Imagen";
+            this.btnModificarImagen.UseVisualStyleBackColor = true;
+            this.btnModificarImagen.Click += new System.EventHandler(this.btnModificarImagen_Click);
+            // 
             // frmAltaModificacionImagen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 465);
+            this.Controls.Add(this.txtModificarImagen);
+            this.Controls.Add(this.btnModificarImagen);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtAgregarImagen);
             this.Controls.Add(this.btnAgregarImagen);
@@ -117,5 +138,7 @@
         private System.Windows.Forms.Button btnAgregarImagen;
         private System.Windows.Forms.TextBox txtAgregarImagen;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.TextBox txtModificarImagen;
+        private System.Windows.Forms.Button btnModificarImagen;
     }
 }

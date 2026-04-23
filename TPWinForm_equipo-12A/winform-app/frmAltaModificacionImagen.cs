@@ -17,6 +17,7 @@ namespace winform_app
         private ImagenNegocio negocio = new ImagenNegocio();
         private List<Imagen> imagenes;
         private int IdArticulo;
+        private int IdImagen = 0;
         public frmAltaModificacionImagen(Articulo seleccionado)
         {
             InitializeComponent();
@@ -93,6 +94,17 @@ namespace winform_app
 
         private void dgvImagenes_SelectionChanged(object sender, EventArgs e)
         {
+            Imagen img = (Imagen)dgvImagenes.CurrentRow.DataBoundItem;
+            if (img != null)
+            {
+                IdImagen = img.Id;
+                txtModificarImagen.Text = img.ImagenUrl;
+            }
+            else
+            {
+                IdImagen = 0;
+                txtModificarImagen.Text = "";
+            }
             mostrarImagen();
         }
 
@@ -111,9 +123,34 @@ namespace winform_app
                     MessageBox.Show("Ingrese una URL por favor", "Atención: código obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                nueva.IdArticulo = IdArticulo;
-                nueva.ImagenUrl = txtAgregarImagen.Text;
-                negocio.agregarImagen(nueva);
+                if (IdImagen != 0)
+                {
+                    nueva.IdArticulo = IdArticulo;
+                    nueva.ImagenUrl = txtAgregarImagen.Text;
+                    negocio.agregarImagen(nueva);
+                    cargarImagenes(IdArticulo);                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnModificarImagen_Click(object sender, EventArgs e)
+        {
+            Imagen modificada = new Imagen();
+            try
+            {
+                if (chequearVacio(txtModificarImagen.Text))
+                {
+                    MessageBox.Show("No se puede cargar una URL vacía", "Atención: código obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                modificada.ImagenUrl = txtModificarImagen.Text;
+                modificada.IdArticulo = IdArticulo;
+                modificada.Id = IdImagen;
+                negocio.modificarImagen(modificada);
                 cargarImagenes(IdArticulo);
             }
             catch (Exception ex)
