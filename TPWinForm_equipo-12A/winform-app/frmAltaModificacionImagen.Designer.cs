@@ -35,6 +35,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtModificarImagen = new System.Windows.Forms.TextBox();
             this.btnModificarImagen = new System.Windows.Forms.Button();
+            this.btnEliminarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImagenes)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +82,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(886, 418);
+            this.btnSalir.Location = new System.Drawing.Point(864, 418);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(87, 35);
             this.btnSalir.TabIndex = 4;
@@ -106,11 +107,22 @@
             this.btnModificarImagen.UseVisualStyleBackColor = true;
             this.btnModificarImagen.Click += new System.EventHandler(this.btnModificarImagen_Click);
             // 
+            // btnEliminarImagen
+            // 
+            this.btnEliminarImagen.Location = new System.Drawing.Point(769, 355);
+            this.btnEliminarImagen.Name = "btnEliminarImagen";
+            this.btnEliminarImagen.Size = new System.Drawing.Size(182, 35);
+            this.btnEliminarImagen.TabIndex = 7;
+            this.btnEliminarImagen.Text = "Eliminar Imagen";
+            this.btnEliminarImagen.UseVisualStyleBackColor = true;
+            this.btnEliminarImagen.Click += new System.EventHandler(this.btnEliminarImagen_Click);
+            // 
             // frmAltaModificacionImagen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 465);
+            this.Controls.Add(this.btnEliminarImagen);
             this.Controls.Add(this.txtModificarImagen);
             this.Controls.Add(this.btnModificarImagen);
             this.Controls.Add(this.btnSalir);
@@ -140,5 +152,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtModificarImagen;
         private System.Windows.Forms.Button btnModificarImagen;
+        private System.Windows.Forms.Button btnEliminarImagen;
     }
 }

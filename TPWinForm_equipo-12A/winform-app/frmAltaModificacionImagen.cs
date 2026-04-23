@@ -17,7 +17,7 @@ namespace winform_app
         private ImagenNegocio negocio = new ImagenNegocio();
         private List<Imagen> imagenes;
         private int IdArticulo;
-        private int IdImagen = 0;
+        private int IdImagen = -1;
         public frmAltaModificacionImagen(Articulo seleccionado)
         {
             InitializeComponent();
@@ -102,7 +102,7 @@ namespace winform_app
             }
             else
             {
-                IdImagen = 0;
+                IdImagen = -1;
                 txtModificarImagen.Text = "";
             }
             mostrarImagen();
@@ -120,16 +120,14 @@ namespace winform_app
             {
                 if (chequearVacio(txtAgregarImagen.Text))
                 {
-                    MessageBox.Show("Ingrese una URL por favor", "Atención: código obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Ingrese una URL por favor", "Atención: URL vacía", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (IdImagen != 0)
-                {
-                    nueva.IdArticulo = IdArticulo;
-                    nueva.ImagenUrl = txtAgregarImagen.Text;
-                    negocio.agregarImagen(nueva);
-                    cargarImagenes(IdArticulo);                    
-                }
+                nueva.IdArticulo = IdArticulo;
+                nueva.ImagenUrl = txtAgregarImagen.Text;
+                negocio.agregarImagen(nueva);
+                cargarImagenes(IdArticulo);
+                txtAgregarImagen.Clear();
             }
             catch (Exception ex)
             {
@@ -144,7 +142,7 @@ namespace winform_app
             {
                 if (chequearVacio(txtModificarImagen.Text))
                 {
-                    MessageBox.Show("No se puede cargar una URL vacía", "Atención: código obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No se puede cargar una URL vacía", "Atención: URL vacía", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 modificada.ImagenUrl = txtModificarImagen.Text;
@@ -159,9 +157,40 @@ namespace winform_app
             }
         }
 
+
+        private void btnEliminarImagen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvImagenes.CurrentRow != null && dgvImagenes.CurrentRow.DataBoundItem != null)
+                {
+                    Imagen img = (Imagen)dgvImagenes.CurrentRow.DataBoundItem;
+                    DialogResult respuesta = MessageBox.Show(
+                    "¿Seguro que querés eliminar esta imagen?", "Eliminar",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        negocio.eliminarImagen(img.Id);
+                        MessageBox.Show("Imagen eliminada correctamente.");
+                    }
+                    cargarImagenes(IdArticulo);
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una imagen a eliminar", "Atención: selección obligatoria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         private bool chequearVacio(string texto)
         {
             return string.IsNullOrWhiteSpace(texto);
         }
+
     }
 }

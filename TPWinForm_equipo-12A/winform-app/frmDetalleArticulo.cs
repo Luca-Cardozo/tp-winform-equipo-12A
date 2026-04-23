@@ -52,7 +52,7 @@ namespace winform_app
             {
                 txtDescripcion.Text = descripcion;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 txtDescripcion.Text = "No hay descripción cargada para este producto todavía";
             }

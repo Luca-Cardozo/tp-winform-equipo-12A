@@ -14,7 +14,6 @@ namespace winform_app
 {
     public partial class frmCatalogo : Form
     {
-        private Articulo articulo = null;
         private List<Articulo> listaArticulos;
         public frmCatalogo()
         {
