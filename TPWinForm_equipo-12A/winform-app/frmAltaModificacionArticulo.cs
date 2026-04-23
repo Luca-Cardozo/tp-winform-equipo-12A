@@ -61,6 +61,10 @@ namespace winform_app
                     MessageBox.Show("El precio es obligatorio", "Atención: precio obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+                if (!validarPrecio(txtPrecio.Text, out decimal precio))
+                {
+                    return;
+                }
 
                 if (chequearCBOVacio(cboMarca.SelectedIndex) || chequearCBOVacio(cboCategoria.SelectedIndex))
                 {
@@ -158,6 +162,23 @@ namespace winform_app
             {
                 return true;
             }
+        }
+
+        public bool validarPrecio(string texto, out decimal precio)
+        {
+            if (!decimal.TryParse(texto, out precio))
+            {
+                MessageBox.Show("El precio debe ser un número válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (precio <= 0)
+            {
+                MessageBox.Show("El precio debe ser mayor a 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
     }
 }
