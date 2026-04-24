@@ -178,7 +178,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(120, 42);
-            this.btnGuardar.TabIndex = 12;
+            this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -194,7 +194,7 @@
             this.btnCncelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCncelar.Name = "btnCncelar";
             this.btnCncelar.Size = new System.Drawing.Size(109, 43);
-            this.btnCncelar.TabIndex = 13;
+            this.btnCncelar.TabIndex = 7;
             this.btnCncelar.Text = "Cancelar";
             this.btnCncelar.UseVisualStyleBackColor = false;
             this.btnCncelar.Click += new System.EventHandler(this.btnCncelar_Click);
