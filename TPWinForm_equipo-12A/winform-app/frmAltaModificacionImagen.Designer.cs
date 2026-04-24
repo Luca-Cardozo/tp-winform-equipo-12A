@@ -42,6 +42,7 @@
             // 
             // pbxImagen
             // 
+            this.pbxImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxImagen.Location = new System.Drawing.Point(465, 49);
             this.pbxImagen.Name = "pbxImagen";
             this.pbxImagen.Size = new System.Drawing.Size(486, 281);
@@ -65,67 +66,86 @@
             // 
             // btnAgregarImagen
             // 
+            this.btnAgregarImagen.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAgregarImagen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregarImagen.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarImagen.ForeColor = System.Drawing.Color.White;
             this.btnAgregarImagen.Location = new System.Drawing.Point(465, 355);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
-            this.btnAgregarImagen.Size = new System.Drawing.Size(182, 35);
+            this.btnAgregarImagen.Size = new System.Drawing.Size(208, 35);
             this.btnAgregarImagen.TabIndex = 2;
             this.btnAgregarImagen.Text = "Agregar Imagen";
-            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.UseVisualStyleBackColor = false;
             this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             // 
             // txtAgregarImagen
             // 
+            this.txtAgregarImagen.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAgregarImagen.Location = new System.Drawing.Point(52, 361);
             this.txtAgregarImagen.Name = "txtAgregarImagen";
-            this.txtAgregarImagen.Size = new System.Drawing.Size(361, 22);
+            this.txtAgregarImagen.Size = new System.Drawing.Size(361, 25);
             this.txtAgregarImagen.TabIndex = 3;
             // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.Color.SeaGreen;
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Location = new System.Drawing.Point(864, 418);
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(864, 406);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(87, 35);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // txtModificarImagen
             // 
+            this.txtModificarImagen.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModificarImagen.Location = new System.Drawing.Point(52, 406);
             this.txtModificarImagen.Name = "txtModificarImagen";
-            this.txtModificarImagen.Size = new System.Drawing.Size(361, 22);
+            this.txtModificarImagen.Size = new System.Drawing.Size(361, 25);
             this.txtModificarImagen.TabIndex = 6;
             // 
             // btnModificarImagen
             // 
+            this.btnModificarImagen.BackColor = System.Drawing.Color.SeaGreen;
             this.btnModificarImagen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificarImagen.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarImagen.ForeColor = System.Drawing.Color.White;
             this.btnModificarImagen.Location = new System.Drawing.Point(465, 400);
             this.btnModificarImagen.Name = "btnModificarImagen";
-            this.btnModificarImagen.Size = new System.Drawing.Size(182, 35);
+            this.btnModificarImagen.Size = new System.Drawing.Size(208, 35);
             this.btnModificarImagen.TabIndex = 5;
             this.btnModificarImagen.Text = "Modificar Imagen";
-            this.btnModificarImagen.UseVisualStyleBackColor = true;
+            this.btnModificarImagen.UseVisualStyleBackColor = false;
             this.btnModificarImagen.Click += new System.EventHandler(this.btnModificarImagen_Click);
             // 
             // btnEliminarImagen
             // 
+            this.btnEliminarImagen.BackColor = System.Drawing.Color.SeaGreen;
             this.btnEliminarImagen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarImagen.Location = new System.Drawing.Point(769, 355);
+            this.btnEliminarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminarImagen.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarImagen.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarImagen.Location = new System.Drawing.Point(769, 354);
             this.btnEliminarImagen.Name = "btnEliminarImagen";
-            this.btnEliminarImagen.Size = new System.Drawing.Size(182, 35);
+            this.btnEliminarImagen.Size = new System.Drawing.Size(182, 36);
             this.btnEliminarImagen.TabIndex = 7;
             this.btnEliminarImagen.Text = "Eliminar Imagen";
-            this.btnEliminarImagen.UseVisualStyleBackColor = true;
+            this.btnEliminarImagen.UseVisualStyleBackColor = false;
             this.btnEliminarImagen.Click += new System.EventHandler(this.btnEliminarImagen_Click);
             // 
             // frmAltaModificacionImagen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 465);
+            this.BackColor = System.Drawing.Color.MintCream;
+            this.ClientSize = new System.Drawing.Size(1003, 491);
             this.Controls.Add(this.btnEliminarImagen);
             this.Controls.Add(this.txtModificarImagen);
             this.Controls.Add(this.btnModificarImagen);
@@ -138,7 +158,7 @@
             this.MaximizeBox = false;
             this.Name = "frmAltaModificacionImagen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAltaModificacionImagen";
+            this.Text = "Administrador de Imágenes";
             this.Load += new System.EventHandler(this.frmAltaModificacionImagen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImagenes)).EndInit();

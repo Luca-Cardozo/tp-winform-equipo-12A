@@ -50,7 +50,14 @@ namespace winform_app
         {
             try
             {
-                txtDescripcion.Text = descripcion;
+                if (string.IsNullOrEmpty(descripcion))
+                {
+                    txtDescripcion.Text = "No hay descripción cargada para este producto todavía";
+                }
+                else
+                {
+                    txtDescripcion.Text = descripcion;             
+                }
             }
             catch (Exception)
             {
