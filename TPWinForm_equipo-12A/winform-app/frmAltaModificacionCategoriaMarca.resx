@@ -117,4 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAHYAAAB2AAAAAAAAAAAA
+        AAAAAAAuUlJT4XFxcttzcXPgV1JT9iE/S78nSli2J0pYtidKWLYnSli2J0pYtidKWLYnTV68LFdw2CRC
+        VHAAAAAAAAAAOLm4uvycm5z/joyN/6mcn/5dsNH/Q36W/z1ziP89c4j/Y7rd/3LX//9y1///cNX//1i6
+        +/8qVW/tAAAABgAAADi5uLr8s7K0/3Jxcf+pnJ/+XbDR/0N+lf9Ih6D/ctf//3LX//9y1///ctf//3HW
+        //9Yuvv/NGqN+gAAABgAAAA4rKyt/MzLzf/Oy8z/nZKU/jptguxJiKLoSYii6EmIouhmwOXgS42o6EmI
+        ouhGhqPsPHym/CNFWb0AAAAAAAAADCcnJ3cqKip6MDAwfz89PYYAAAAmAAAAIgAAACIAAAAiAAAABgAA
+        ABwAAAAiAAAAIgAAACIAAAAGAAAAAAAAAAMAAAAxAAAAMwAAADMAAAAxAAAAAgAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2g4OE8qWlpvSlo6P2e3N0/VRGKNprWTPSa1kz0mtZ
+        M9JrWTPSa1kz0mtZM9JuWzPWfl8z8FdCJJsAAAAAAAAAOLm4uvyNjI7/npyc/6mcn/7LqWD/kXhE/4Ru
+        Pv+Ebj7/17Nl//jOdf/4znX/+M10//+3YP+BYDP1AAAADgAAADi5uLr8pKSl/4B+f/+pnJ/+y6lg/5J5
+        Rf+dgkr/+M51//jOdf/4znX/+M51//jNdP//t2D/gWAz9QAAAA4AAAA2g4OE8q2trvOwrq71e3N0/VRG
+        KNprWTPSa1kz0mtZM9JrWTPSa1kz0mtZM9JwWjPZfl8z8FdCJJsAAAAAAAAAAwAAADEAAAAzAAAAMwAA
+        ADEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwnJyd3KioqejAw
+        MH8/PT2GAAAAJgAAACIAAAAiAAAAIgAAACIAAAAiAAAAIgAAACIAAAAiAAAABgAAAAAAAAA4rKyt/OXl
+        5v/U0dL/nZKU/jUreOxCNpXoQjaV6EI2lehCNpXoQjaV6EI2lehAM5XrNieX/B8YUb0AAAAAAAAAOLm4
+        uvzm5uf/k5GS/6mcn/5VRcH/PTGK/zctff83LX3/WknM/2hU6/9oVOv/aFPq/0845f8uIoH6AAAAFwAA
+        ADi5uLr8y8rM/6WjpP+pnJ/+VUXB/z0xif9BNZP/aFTr/2hU6/9oVOv/aFTr/2ZS6/9POOX/Jhxl7QAA
+        AAYAAAAuUlJT4XFxcttzcXPgV1JT9h8YRb8kHVO2JB1TtiQdU7ZUQ7qGKSFdsCQdU7YlHVi/Jx5o2B4X
+        TXAAAAAAAAEAAAAAAAAAAAAAAAEAAAABAAAD/wAAAAEAAAAAAAAAAAAAAAEAAAP/AAAAAQAAAAEAAAAA
+        AAAAAAAAAAEAAA==
+</value>
+  </data>
 </root>

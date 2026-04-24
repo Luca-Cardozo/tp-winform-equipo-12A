@@ -117,4 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAF4AAABeAAAAAAAAAAAA
+        AAD///8A////AP///wBGRUiGX11g3WtqbN5ramzea2ps3mtqbN5ramzea2ps3mppa95ramzea2ps3mFg
+        Yt1GREiO////AP///wD///8AXVxe0+Lg4P/i4OD/4uDg/+Lg4P/i4OD/ubSx92ZVKeVfUTXoxcPE/3t5
+        e/+Yl5j/X15h1v///wD///8A////AGRjZtPi4OD/4uDg/+Lg4P/i4OD/uray93VbHejurQD/pHoO8MfF
+        xf/i4OD/fHt9/2hmadb///8A////AB4tNSImMTjuJ1Be6yNmeuFBZnHfgYaG7nNaHOnurQD/yZQG+m1i
+        S+fi4OD/4uDg/9vZ2f9oZmnW////ABdUZE8SaoLkGXKJ6EZfaONBWmXZMWZ04hWKpfdZTB/uwo8I+m1i
+        S+evra//e3l7/3t5e//Pzc3/aGZp1hwpMCUUYHXkOmNx27aytO3Kxcb/ysXG/8bBwv9ZXmLvFpGr90NG
+        P+zV09T/ysjI/8rIyP/KyMj/393d/2ZlaNYXTmGZFXWP66+rrPjJxMX/dXJ1/29sb/+5tbb/xsHC/zpP
+        V+grYXDltbO0/5SSlP+UkpT/lJKU/9LQ0P9oZmnWFlZoxDBOWOPHwsP/m5eZ/5qWmP+alpj/mpaY/765
+        uv9RVVrgFHWP7rWztP97eXv/e3l7/3t5e//Pzc3/aGZp1hVdcsNAW2TiyMPE/5uXmf+alpj/mpaY/5qW
+        mP++ubr/am1w5RKCoem6ubn/4uDg/+Lg4P/i4OD/4uDg/2hmadYWWm6ZGXKL4qGdnvfJxMX/dXJ1/29s
+        b/+5tbb/yMPE/zRES+YlZXfhw8HB/3t5e/97eXv/e3l7/8/Nzf9oZmnWHDQ9NhB0j+k6RUzpvrm7/srF
+        xv/Kxcb/xL/A/2dobOYOiajuV3B56KCeoP+gnqD/oJ6g/6CeoP/V09P/aGZp1v///wAWUWVyDYSi7SVT
+        YeRCSU7rVV1i4C5CS+cTjKrzP15o5dvZ2f++vL3/vby8/728vP+9vLz/3dvb/2hmadb///8A////ABo8
+        R0QjRVLkHW2D6BV7luYuZnffZX6H6rSzs/97eXv/f36A/+De3v+pqKnrZ2Rn4mRiZeM6OTzd////AP//
+        /wD///8AZGNm09DOzv+7ubr/ysjI/8rIyP/KyMj/ysjI/8zKy//i4OD/ZmNn4sfCw/9XVVjbLyovK///
+        /wD///8A////AF1cXtPU0tP/k5GT/5ORk/+TkZP/k5GT/5ORk/+WlJb/4N7e/2NhZONXVVjaKioqK///
+        /wD///8A////AP///wBGRUiGX11g3WtqbN5ramzea2ps3mtqbN5ramzea2ps3mtqbN4yMTXmKioqK///
+        /wD///8A4AAAAOAAAADgAAAAwAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAwAAAAOAA
+        AADgAQAA4AMAAA==
+</value>
+  </data>
 </root>

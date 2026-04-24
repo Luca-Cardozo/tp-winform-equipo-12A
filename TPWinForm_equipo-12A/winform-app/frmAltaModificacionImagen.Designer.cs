@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAltaModificacionImagen));
             this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.dgvImagenes = new System.Windows.Forms.DataGridView();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
@@ -155,6 +156,7 @@
             this.Controls.Add(this.dgvImagenes);
             this.Controls.Add(this.pbxImagen);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAltaModificacionImagen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
