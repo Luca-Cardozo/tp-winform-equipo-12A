@@ -54,6 +54,8 @@ namespace winform_app
 
         public void cargarImagenInicial()
         {
+
+
             try
             {
                 if (imagenes != null && imagenes.Count > 0 && !string.IsNullOrEmpty(imagenes[0].ImagenUrl))
@@ -65,9 +67,15 @@ namespace winform_app
                     pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(
+            "No se pudo mostrar una imagen para este artículo. Verifique las URL cargadas o agregue una nueva.",
+            "Imagen no disponible",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Warning);
+
+
                 pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
             }
         }
@@ -85,9 +93,9 @@ namespace winform_app
                     pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show(ex.ToString());
+               
                 pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
             }            
         }
@@ -121,6 +129,14 @@ namespace winform_app
                 if (chequearVacio(txtAgregarImagen.Text))
                 {
                     MessageBox.Show("Ingrese una URL por favor", "Atención: URL vacía", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (imagenes != null && imagenes.Exists(x =>
+                  x.ImagenUrl != null &&
+                  x.ImagenUrl.ToUpper() == txtAgregarImagen.Text.ToUpper()))
+                {
+                    MessageBox.Show("La imagen ya existe para este artículo.");
                     return;
                 }
                 nueva.IdArticulo = IdArticulo;
