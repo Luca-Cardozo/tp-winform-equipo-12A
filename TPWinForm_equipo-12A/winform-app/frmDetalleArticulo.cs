@@ -28,23 +28,47 @@ namespace winform_app
         public void cargarImagenInicial(List<Imagen> imgs)
         {
             imagenes = imgs;
-            try
+            if (imagenes == null || imagenes.Count == 0)
             {
-                if (imagenes != null && imagenes.Count > 0 && !string.IsNullOrEmpty(imagenes[0].ImagenUrl))
+                MessageBox.Show("Para el producto seleccionado no hay imágenes disponibles.",
+                                "Sin imágenes",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+
+                pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
+                return;
+            }
+
+            foreach (Imagen img in imagenes)
+            {
+                if (string.IsNullOrEmpty(img.ImagenUrl))
+                    continue;
+
+
+                try
                 {
+
                     pbxImagen.Load(imgs[0].ImagenUrl);
                 }
-                else
+
+
+                catch
                 {
-                    pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
+
                 }
+
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("El producto no tiene imágenes disponibles.",
+                            "Imágenes no disponibles",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
                 pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
-            }
+
+
+            
         }
+
 
         public void cargarDescripcion(string descripcion)
         {
@@ -67,16 +91,28 @@ namespace winform_app
 
         private void mostrarImagen()
         {
-            if (imagenes != null && imagenes.Count > 0 && !string.IsNullOrEmpty(imagenes[0].ImagenUrl))
+            try
             {
-                pbxImagen.Load(imagenes[indiceImagen].ImagenUrl);
+                if (imagenes != null && imagenes.Count > 0 && !string.IsNullOrEmpty(imagenes[indiceImagen].ImagenUrl))
+                {
+                    pbxImagen.Load(imagenes[indiceImagen].ImagenUrl);
+                }
+                else
+                {
+                    pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
+                }
             }
-            else
+            catch
             {
-                 pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
+                MessageBox.Show(
+        "No se pudo cargar la imagen. Se mostrará una imagen predeterminada.",
+        "Imagen no disponible",
+        MessageBoxButtons.OK,
+        MessageBoxIcon.Warning
+                );
+
             }
         }
-
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
             if (imagenes.Count == 0) return;
