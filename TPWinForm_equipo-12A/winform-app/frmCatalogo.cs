@@ -152,9 +152,14 @@ namespace winform_app
 
 
             string filtro = txtFiltroRapido.Text;
-            if (filtro != "")
+            if (!string.IsNullOrEmpty(filtro))
             {
-                listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()));
+                listaFiltrada = listaArticulos.FindAll(x =>
+            (x.Nombre != null && x.Nombre.ToUpper().Contains(filtro.ToUpper())) ||
+            (x.Marca != null && x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper())) ||
+            (x.Categoria != null && x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()))
+        );
+
             }
             else
             {
