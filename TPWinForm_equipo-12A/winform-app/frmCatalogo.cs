@@ -148,22 +148,34 @@ namespace winform_app
 
         private void txtFiltroRapido_TextChanged(object sender, EventArgs e)
         {
-            List<Articulo> listaFiltrada;
+            filtrar();
+        }
 
 
-            string filtro = txtFiltroRapido.Text;
-            if (!string.IsNullOrEmpty(filtro))
+        private void filtrar()
+        {
+            List<Articulo> listaFiltrada = listaArticulos;
+
+            
+            if (!string.IsNullOrEmpty(txtFiltroRapido.Text))
             {
-                listaFiltrada = listaArticulos.FindAll(x =>
-            (x.Nombre != null && x.Nombre.ToUpper().Contains(filtro.ToUpper())) ||
-            (x.Marca != null && x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper())) ||
-            (x.Categoria != null && x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()))
-        );
-
+                listaFiltrada = listaFiltrada.FindAll(x =>
+            (x.Nombre != null && x.Nombre.ToUpper().Contains(txtFiltroRapido.Text.ToUpper()))
+                );
             }
-            else
+
+            if (!string.IsNullOrEmpty(txtFiltroMarca.Text))
             {
-                listaFiltrada = listaArticulos;
+                listaFiltrada = listaFiltrada.FindAll(x =>
+            (x.Marca != null && x.Marca.Descripcion.ToUpper().Contains(txtFiltroMarca.Text.ToUpper()))
+             );
+            }
+
+            if (!string.IsNullOrEmpty(txtFiltroCategoria.Text))
+            {
+                listaFiltrada = listaFiltrada.FindAll(x =>
+            (x.Categoria != null && x.Categoria.Descripcion.ToUpper().Contains(txtFiltroCategoria.Text.ToUpper()))
+             );
             }
 
             dgvArticulos.DataSource = null;
@@ -171,7 +183,6 @@ namespace winform_app
             dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "C2";
             ocultarColumnas();
         }
-
         private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string opcion = cboCampo.SelectedItem.ToString();
@@ -400,6 +411,16 @@ namespace winform_app
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void txtFiltroMarca_TextChanged(object sender, EventArgs e)
+        {
+            filtrar();
+        }
+
+        private void txtFiltroCategoria_TextChanged(object sender, EventArgs e)
+        {
+            filtrar();
         }
     }
 }

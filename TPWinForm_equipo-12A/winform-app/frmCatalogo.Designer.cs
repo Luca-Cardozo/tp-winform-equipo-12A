@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCatalogo));
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
@@ -68,6 +68,10 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.lblFiltroRapidoMarca = new System.Windows.Forms.Label();
+            this.lblFilroRapidoCategoria = new System.Windows.Forms.Label();
+            this.txtFiltroMarca = new System.Windows.Forms.TextBox();
+            this.txtFiltroCategoria = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -80,23 +84,23 @@
             this.dgvArticulos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvArticulos.Location = new System.Drawing.Point(230, 142);
@@ -172,9 +176,9 @@
             this.lblFiltroRapido.Location = new System.Drawing.Point(230, 109);
             this.lblFiltroRapido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFiltroRapido.Name = "lblFiltroRapido";
-            this.lblFiltroRapido.Size = new System.Drawing.Size(135, 24);
+            this.lblFiltroRapido.Size = new System.Drawing.Size(94, 24);
             this.lblFiltroRapido.TabIndex = 4;
-            this.lblFiltroRapido.Text = "Filtrar por nombre";
+            this.lblFiltroRapido.Text = "Nombre:";
             this.lblFiltroRapido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtFiltroRapido
@@ -183,10 +187,10 @@
             this.txtFiltroRapido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltroRapido.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltroRapido.ForeColor = System.Drawing.Color.Black;
-            this.txtFiltroRapido.Location = new System.Drawing.Point(393, 109);
+            this.txtFiltroRapido.Location = new System.Drawing.Point(332, 109);
             this.txtFiltroRapido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFiltroRapido.Name = "txtFiltroRapido";
-            this.txtFiltroRapido.Size = new System.Drawing.Size(234, 25);
+            this.txtFiltroRapido.Size = new System.Drawing.Size(166, 25);
             this.txtFiltroRapido.TabIndex = 5;
             this.txtFiltroRapido.TextChanged += new System.EventHandler(this.txtFiltroRapido_TextChanged);
             // 
@@ -334,14 +338,14 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.agregarToolStripMenuItem.Text = "&Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click_1);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.modificarToolStripMenuItem.Text = "&Modificar";
             this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
@@ -377,14 +381,14 @@
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(166, 26);
             this.agregarToolStripMenuItem1.Text = "&Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click_1);
             // 
             // modificarToolStripMenuItem1
             // 
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(166, 26);
             this.modificarToolStripMenuItem1.Text = "&Modificar";
             this.modificarToolStripMenuItem1.Click += new System.EventHandler(this.modificarToolStripMenuItem1_Click);
             // 
@@ -416,7 +420,7 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.toolStrip1.BackColor = System.Drawing.Color.LemonChiffon;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
@@ -473,12 +477,62 @@
             this.timer4.Interval = 1000;
             this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
+            // lblFiltroRapidoMarca
+            // 
+            this.lblFiltroRapidoMarca.BackColor = System.Drawing.Color.SeaGreen;
+            this.lblFiltroRapidoMarca.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltroRapidoMarca.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblFiltroRapidoMarca.Location = new System.Drawing.Point(517, 110);
+            this.lblFiltroRapidoMarca.Name = "lblFiltroRapidoMarca";
+            this.lblFiltroRapidoMarca.Size = new System.Drawing.Size(94, 24);
+            this.lblFiltroRapidoMarca.TabIndex = 18;
+            this.lblFiltroRapidoMarca.Text = "Marca:";
+            this.lblFiltroRapidoMarca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFilroRapidoCategoria
+            // 
+            this.lblFilroRapidoCategoria.BackColor = System.Drawing.Color.SeaGreen;
+            this.lblFilroRapidoCategoria.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilroRapidoCategoria.ForeColor = System.Drawing.Color.White;
+            this.lblFilroRapidoCategoria.Location = new System.Drawing.Point(803, 111);
+            this.lblFilroRapidoCategoria.Name = "lblFilroRapidoCategoria";
+            this.lblFilroRapidoCategoria.Size = new System.Drawing.Size(94, 24);
+            this.lblFilroRapidoCategoria.TabIndex = 19;
+            this.lblFilroRapidoCategoria.Text = "Categoría:";
+            this.lblFilroRapidoCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtFiltroMarca
+            // 
+            this.txtFiltroMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFiltroMarca.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltroMarca.ForeColor = System.Drawing.Color.Black;
+            this.txtFiltroMarca.Location = new System.Drawing.Point(617, 110);
+            this.txtFiltroMarca.Name = "txtFiltroMarca";
+            this.txtFiltroMarca.Size = new System.Drawing.Size(166, 25);
+            this.txtFiltroMarca.TabIndex = 20;
+            this.txtFiltroMarca.TextChanged += new System.EventHandler(this.txtFiltroMarca_TextChanged);
+            // 
+            // txtFiltroCategoria
+            // 
+            this.txtFiltroCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFiltroCategoria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltroCategoria.ForeColor = System.Drawing.Color.Black;
+            this.txtFiltroCategoria.Location = new System.Drawing.Point(905, 111);
+            this.txtFiltroCategoria.Name = "txtFiltroCategoria";
+            this.txtFiltroCategoria.Size = new System.Drawing.Size(166, 25);
+            this.txtFiltroCategoria.TabIndex = 21;
+            this.txtFiltroCategoria.TextChanged += new System.EventHandler(this.txtFiltroCategoria_TextChanged);
+            // 
             // frmCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
             this.ClientSize = new System.Drawing.Size(1285, 574);
+            this.Controls.Add(this.txtFiltroCategoria);
+            this.Controls.Add(this.txtFiltroMarca);
+            this.Controls.Add(this.lblFilroRapidoCategoria);
+            this.Controls.Add(this.lblFiltroRapidoMarca);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnDetalle);
@@ -559,6 +613,10 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.Label lblFiltroRapidoMarca;
+        private System.Windows.Forms.Label lblFilroRapidoCategoria;
+        private System.Windows.Forms.TextBox txtFiltroMarca;
+        private System.Windows.Forms.TextBox txtFiltroCategoria;
     }
 }
 
