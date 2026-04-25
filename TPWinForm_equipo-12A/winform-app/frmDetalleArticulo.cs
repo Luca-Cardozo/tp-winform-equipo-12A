@@ -41,22 +41,18 @@ namespace winform_app
 
             foreach (Imagen img in imagenes)
             {
-                if (string.IsNullOrEmpty(img.ImagenUrl))
-                    continue;
-
-
-                try
+                if (!string.IsNullOrEmpty(img.ImagenUrl))
                 {
+                    try
+                    {
+                        pbxImagen.Load(img.ImagenUrl);
+                        return;
+                    }
+                    catch
+                    {
 
-                    pbxImagen.Load(imgs[0].ImagenUrl);
+                    }
                 }
-
-
-                catch
-                {
-
-                }
-
             }
                 MessageBox.Show("El producto no tiene imágenes disponibles.",
                             "Imágenes no disponibles",
