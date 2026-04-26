@@ -33,6 +33,29 @@ namespace winform_app
             cboCampo.Items.Add("Precio");
 
             cargarFiltrosToolStrip();
+
+            //formato botones
+
+            List<Button> misBotones = new List<Button> {
+                btnAgregarProducto, btnModificarProducto, btnEliminarProducto,
+                btnCargarCatalogo, btnDetalle, btnBuscar };
+
+            foreach (var btn in misBotones)
+            {
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
+                btn.BackColor = Color.FromArgb(25, 94, 61);
+                btn.ForeColor = Color.White;
+                btn.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                btn.FlatAppearance.BorderSize = 0;
+                btn.FlatAppearance.BorderColor = Color.FromArgb(25, 94, 61);
+
+
+                btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(35, 120, 75);
+
+
+                AplicarBordesRedondeados(btn, 15);
+            }
         }
 
         private void cargar()
@@ -495,6 +518,16 @@ namespace winform_app
         private void tscboMarcas_SelectedIndexChanged(object sender, EventArgs e)
         {
             filtrar();
+        }
+
+        private void AplicarBordesRedondeados(Control control, int radio)
+        {
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            gp.AddArc(0, 0, radio, radio, 180, 90);
+            gp.AddArc(control.Width - radio, 0, radio, radio, 270, 90);
+            gp.AddArc(control.Width - radio, control.Height - radio, radio, radio, 0, 90);
+            gp.AddArc(0, control.Height - radio, radio, radio, 90, 90);
+            control.Region = new Region(gp);
         }
     }
 }
