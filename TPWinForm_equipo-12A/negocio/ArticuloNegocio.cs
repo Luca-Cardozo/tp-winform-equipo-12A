@@ -234,5 +234,50 @@ namespace negocio
                 throw ex;
             }
         }
+
+        public bool validarCodigoDuplicado(string nuevoCodigo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT Id FROM ARTICULOS WHERE Codigo = @codigo");
+                datos.setearParametro("@codigo", nuevoCodigo);
+                datos.ejecutarLectura();
+                if (datos.Lector.Read()) return true;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public bool validarNombreDuplicado(string nuevoNombre)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT Id FROM ARTICULOS WHERE Nombre LIKE @nombre");
+                datos.setearParametro("@nombre", nuevoNombre);
+                datos.ejecutarLectura();
+                if (datos.Lector.Read()) return true;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }

@@ -50,10 +50,48 @@ namespace winform_app
                     return;
                 }
 
+                bool codigoDuplicado = negocio.validarCodigoDuplicado(txtCodigo.Text);
+
+                if (articulo == null)
+                {
+                    if(codigoDuplicado)
+                    {
+                        MessageBox.Show("El código ya existe", "Atención: código duplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+                else
+                {
+                    if(articulo.Codigo != txtCodigo.Text && codigoDuplicado)
+                    {
+                        MessageBox.Show("El código ya existe", "Atención: código duplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+
                 if (chequearVacio(txtNombre.Text))
                 {
                     MessageBox.Show("El nombre es obligatorio", "Atención: nombre obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
+                }
+
+                bool nombreDuplicado = negocio.validarNombreDuplicado(txtNombre.Text);
+
+                if (articulo == null)
+                {
+                    if (nombreDuplicado)
+                    {
+                        MessageBox.Show("El nombre ya existe", "Atención: nombre duplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+                else
+                {
+                    if (articulo.Nombre != txtNombre.Text && nombreDuplicado)
+                    {
+                        MessageBox.Show("El nombre ya existe", "Atención: nombre duplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
                 }
 
                 if (chequearVacio(txtPrecio.Text))
