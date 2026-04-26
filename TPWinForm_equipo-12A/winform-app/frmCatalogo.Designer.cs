@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCatalogo));
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
@@ -59,6 +59,9 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.tscboCategorias = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnAgregarImagen = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -84,23 +87,23 @@
             this.dgvArticulos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvArticulos.Location = new System.Drawing.Point(230, 142);
@@ -190,7 +193,7 @@
             this.txtFiltroRapido.Location = new System.Drawing.Point(332, 109);
             this.txtFiltroRapido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFiltroRapido.Name = "txtFiltroRapido";
-            this.txtFiltroRapido.Size = new System.Drawing.Size(166, 25);
+            this.txtFiltroRapido.Size = new System.Drawing.Size(166, 21);
             this.txtFiltroRapido.TabIndex = 5;
             this.txtFiltroRapido.TextChanged += new System.EventHandler(this.txtFiltroRapido_TextChanged);
             // 
@@ -256,7 +259,7 @@
             this.cboCampo.Location = new System.Drawing.Point(315, 464);
             this.cboCampo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cboCampo.Name = "cboCampo";
-            this.cboCampo.Size = new System.Drawing.Size(166, 28);
+            this.cboCampo.Size = new System.Drawing.Size(166, 23);
             this.cboCampo.TabIndex = 10;
             this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
             // 
@@ -268,7 +271,7 @@
             this.cboCriterio.Location = new System.Drawing.Point(633, 467);
             this.cboCriterio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cboCriterio.Name = "cboCriterio";
-            this.cboCriterio.Size = new System.Drawing.Size(166, 28);
+            this.cboCriterio.Size = new System.Drawing.Size(166, 23);
             this.cboCriterio.TabIndex = 11;
             // 
             // txtFiltro
@@ -279,7 +282,7 @@
             this.txtFiltro.Location = new System.Drawing.Point(905, 467);
             this.txtFiltro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(184, 25);
+            this.txtFiltro.Size = new System.Drawing.Size(184, 21);
             this.txtFiltro.TabIndex = 12;
             // 
             // btnCargarCatalogo
@@ -323,7 +326,7 @@
             this.ctsCat.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctsCat.ForeColor = System.Drawing.Color.Black;
             this.ctsCat.Name = "ctsCat";
-            this.ctsCat.Size = new System.Drawing.Size(95, 42);
+            this.ctsCat.Size = new System.Drawing.Size(79, 42);
             this.ctsCat.Text = "&Categoría";
             // 
             // tsmCat
@@ -332,27 +335,27 @@
             this.agregarToolStripMenuItem,
             this.modificarToolStripMenuItem});
             this.tsmCat.Name = "tsmCat";
-            this.tsmCat.Size = new System.Drawing.Size(232, 26);
+            this.tsmCat.Size = new System.Drawing.Size(188, 22);
             this.tsmCat.Text = "&Agregar/Modificar";
             // 
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.agregarToolStripMenuItem.Text = "&Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click_1);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.modificarToolStripMenuItem.Text = "&Modificar";
             this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem1
             // 
             this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(232, 26);
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(188, 22);
             this.eliminarToolStripMenuItem1.Text = "&Eliminar";
             this.eliminarToolStripMenuItem1.Click += new System.EventHandler(this.eliminarToolStripMenuItem1_Click);
             // 
@@ -365,7 +368,7 @@
             this.ctsMar.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctsMar.ForeColor = System.Drawing.Color.Black;
             this.ctsMar.Name = "ctsMar";
-            this.ctsMar.Size = new System.Drawing.Size(70, 42);
+            this.ctsMar.Size = new System.Drawing.Size(58, 42);
             this.ctsMar.Text = "&Marca";
             // 
             // tsmMar
@@ -375,20 +378,20 @@
             this.agregarToolStripMenuItem1,
             this.modificarToolStripMenuItem1});
             this.tsmMar.Name = "tsmMar";
-            this.tsmMar.Size = new System.Drawing.Size(232, 26);
+            this.tsmMar.Size = new System.Drawing.Size(188, 22);
             this.tsmMar.Text = "&Agregar/Modificar";
             // 
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(166, 26);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
             this.agregarToolStripMenuItem1.Text = "&Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click_1);
             // 
             // modificarToolStripMenuItem1
             // 
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(166, 26);
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
             this.modificarToolStripMenuItem1.Text = "&Modificar";
             this.modificarToolStripMenuItem1.Click += new System.EventHandler(this.modificarToolStripMenuItem1_Click);
             // 
@@ -396,7 +399,7 @@
             // 
             this.eliminarToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.eliminarToolStripMenuItem.Text = "&Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
@@ -423,6 +426,9 @@
             this.toolStrip1.BackColor = System.Drawing.Color.LemonChiffon;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel2,
+            this.tscboCategorias,
+            this.toolStripSeparator2,
             this.toolStripLabel1,
             this.btnAgregarImagen,
             this.toolStripSeparator1});
@@ -432,11 +438,30 @@
             this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(155, 24);
+            this.toolStripLabel2.Text = "Filtrar por categoría:";
+            // 
+            // tscboCategorias
+            // 
+            this.tscboCategorias.Name = "tscboCategorias";
+            this.tscboCategorias.Size = new System.Drawing.Size(121, 27);
+            this.tscboCategorias.SelectedIndexChanged += new System.EventHandler(this.tscboCategorias_SelectedIndexChanged);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(175, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(144, 24);
             this.toolStripLabel1.Text = "Administrar Imágenes";
             // 
             // btnAgregarImagen
@@ -445,7 +470,7 @@
             this.btnAgregarImagen.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarImagen.Image")));
             this.btnAgregarImagen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAgregarImagen.Name = "btnAgregarImagen";
-            this.btnAgregarImagen.Size = new System.Drawing.Size(29, 24);
+            this.btnAgregarImagen.Size = new System.Drawing.Size(24, 24);
             this.btnAgregarImagen.Text = "toolStripButton1";
             this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             // 
@@ -469,7 +494,7 @@
             // lblFechaHora
             // 
             this.lblFechaHora.Name = "lblFechaHora";
-            this.lblFechaHora.Size = new System.Drawing.Size(0, 16);
+            this.lblFechaHora.Size = new System.Drawing.Size(0, 17);
             // 
             // timer4
             // 
@@ -508,7 +533,7 @@
             this.txtFiltroMarca.ForeColor = System.Drawing.Color.Black;
             this.txtFiltroMarca.Location = new System.Drawing.Point(617, 110);
             this.txtFiltroMarca.Name = "txtFiltroMarca";
-            this.txtFiltroMarca.Size = new System.Drawing.Size(166, 25);
+            this.txtFiltroMarca.Size = new System.Drawing.Size(166, 21);
             this.txtFiltroMarca.TabIndex = 20;
             this.txtFiltroMarca.TextChanged += new System.EventHandler(this.txtFiltroMarca_TextChanged);
             // 
@@ -519,13 +544,13 @@
             this.txtFiltroCategoria.ForeColor = System.Drawing.Color.Black;
             this.txtFiltroCategoria.Location = new System.Drawing.Point(905, 111);
             this.txtFiltroCategoria.Name = "txtFiltroCategoria";
-            this.txtFiltroCategoria.Size = new System.Drawing.Size(166, 25);
+            this.txtFiltroCategoria.Size = new System.Drawing.Size(166, 21);
             this.txtFiltroCategoria.TabIndex = 21;
             this.txtFiltroCategoria.TextChanged += new System.EventHandler(this.txtFiltroCategoria_TextChanged);
             // 
             // frmCatalogo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
             this.ClientSize = new System.Drawing.Size(1285, 574);
@@ -617,6 +642,9 @@
         private System.Windows.Forms.Label lblFilroRapidoCategoria;
         private System.Windows.Forms.TextBox txtFiltroMarca;
         private System.Windows.Forms.TextBox txtFiltroCategoria;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripComboBox tscboCategorias;
     }
 }
 

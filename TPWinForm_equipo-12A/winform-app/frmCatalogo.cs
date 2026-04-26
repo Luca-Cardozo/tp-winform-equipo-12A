@@ -20,15 +20,19 @@ namespace winform_app
             InitializeComponent();
         }
 
+
         private void frmCatalogo_Load(object sender, EventArgs e)
         {
             lblFechaHora.Text = DateTime.Now.ToString("F");
             cargar();
+
             cboCampo.Items.Add("Código");
             cboCampo.Items.Add("Nombre");
             cboCampo.Items.Add("Marca");
             cboCampo.Items.Add("Categoría");
             cboCampo.Items.Add("Precio");
+
+            cargarFiltrosToolStrip();
         }
 
         private void cargar()
@@ -156,13 +160,21 @@ namespace winform_app
         {
             List<Articulo> listaFiltrada = listaArticulos;
 
-            
+
             if (!string.IsNullOrEmpty(txtFiltroRapido.Text))
             {
                 listaFiltrada = listaFiltrada.FindAll(x =>
             (x.Nombre != null && x.Nombre.ToUpper().Contains(txtFiltroRapido.Text.ToUpper()))
                 );
             }
+            if (tscboCategorias.SelectedItem != null && tscboCategorias.SelectedItem.ToString() != "Todas")
+            {
+                string seleccion = tscboCategorias.SelectedItem.ToString();
+                listaFiltrada = listaFiltrada.FindAll(x =>
+                    x.Categoria != null && x.Categoria.Descripcion == seleccion
+                );
+            }
+
 
             if (!string.IsNullOrEmpty(txtFiltroMarca.Text))
             {
@@ -319,7 +331,7 @@ namespace winform_app
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-            }            
+            }
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
@@ -419,6 +431,36 @@ namespace winform_app
         }
 
         private void txtFiltroCategoria_TextChanged(object sender, EventArgs e)
+        {
+            filtrar();
+        }
+
+        private void cargarFiltrosToolStrip()
+        {
+            try
+            {
+                CategoriaNegocio negocioCat = new CategoriaNegocio();
+                tscboCategorias.Items.Clear();
+                tscboCategorias.Items.Add("Todas");
+
+                foreach (var cat in negocioCat.listar())
+                {
+                    tscboCategorias.Items.Add(cat.Descripcion);
+                }
+                tscboCategorias.SelectedIndex = 0;
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al cargar filtros: " + ex.ToString());
+            }
+        }
+
+
+        private void tscboCategorias_SelectedIndexChanged(object sender, EventArgs e)
         {
             filtrar();
         }
