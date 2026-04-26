@@ -103,27 +103,33 @@ namespace winform_app
         {
             try
             {
-                string dato = txtAgregar.Text;
-                if (string.IsNullOrEmpty(dato))
+                string dato = txtAgregar.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(dato))
                 {
-                    MessageBox.Show("No se puede agregar un elemento vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El campo no puede estar vacío o contener solo espacios.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+
                 if (dataRecibida == "MenuMarca")
                 {
+
                     marNeg.agregar(dato);
                 }
                 else
                 {
                     catNeg.agregar(dato);
                 }
+
+                MessageBox.Show("Agregado con éxito");
                 MostrarGrilla(dgvMC, dataRecibida);
-                txtAgregar.Text = "";
+                txtAgregar.Clear();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
-            }            
+                MessageBox.Show("Ocurrió un error al intentar agregar: " + ex.Message);
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
