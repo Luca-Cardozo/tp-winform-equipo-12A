@@ -174,7 +174,13 @@ namespace winform_app
                     x.Categoria != null && x.Categoria.Descripcion == seleccion
                 );
             }
-
+            if (tscboMarcas.SelectedItem != null && tscboMarcas.SelectedItem.ToString() != "Todas")
+            {
+                string seleccion = tscboMarcas.SelectedItem.ToString();
+                listaFiltrada = listaFiltrada.FindAll(x =>
+                    x.Marca != null && x.Marca.Descripcion == seleccion
+                );
+            }
 
             if (!string.IsNullOrEmpty(txtFiltroMarca.Text))
             {
@@ -457,10 +463,36 @@ namespace winform_app
 
                 MessageBox.Show("Error al cargar filtros: " + ex.ToString());
             }
+
+            try
+            {
+                MarcaNegocio negocioMar = new MarcaNegocio();
+                tscboMarcas.Items.Clear();
+                tscboMarcas.Items.Add("Todas");
+
+                foreach (var mar in negocioMar.listar())
+                {
+                    tscboMarcas.Items.Add(mar.Descripcion);
+                }
+                tscboMarcas.SelectedIndex = 0;
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al cargar filtros: " + ex.ToString());
+            }
         }
 
 
         private void tscboCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filtrar();
+        }
+
+        private void tscboMarcas_SelectedIndexChanged(object sender, EventArgs e)
         {
             filtrar();
         }
