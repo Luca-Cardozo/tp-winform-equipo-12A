@@ -126,7 +126,8 @@ namespace winform_app
             Imagen nueva = new Imagen();
             try
             {
-                if (chequearVacio(txtAgregarImagen.Text))
+                string url = txtAgregarImagen.Text.Trim();
+                if (chequearVacio(url))
                 {
                     MessageBox.Show("Ingrese una URL por favor", "Atención: URL vacía", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -134,13 +135,13 @@ namespace winform_app
 
                 if (imagenes != null && imagenes.Exists(x =>
                   x.ImagenUrl != null &&
-                  x.ImagenUrl.ToUpper() == txtAgregarImagen.Text.ToUpper()))
+                  string.Equals(x.ImagenUrl.Trim(), url, StringComparison.OrdinalIgnoreCase)))
                 {
-                    MessageBox.Show("La imagen ya existe para este artículo.");
+                    MessageBox.Show("La imagen ya existe para este artículo.", "Imagen duplicada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 nueva.IdArticulo = IdArticulo;
-                nueva.ImagenUrl = txtAgregarImagen.Text;
+                nueva.ImagenUrl = url;
                 negocio.agregarImagen(nueva);
                 cargarImagenes(IdArticulo);
                 txtAgregarImagen.Clear();

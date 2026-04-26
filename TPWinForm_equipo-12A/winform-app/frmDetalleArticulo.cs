@@ -54,12 +54,12 @@ namespace winform_app
                     }
                 }
             }
-                MessageBox.Show("El producto no tiene imágenes disponibles.",
-                            "Imágenes no disponibles",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+            MessageBox.Show("El producto no tiene imágenes disponibles.",
+                        "Imágenes no disponibles",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
 
-                pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
+            pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
 
 
             
@@ -100,12 +100,6 @@ namespace winform_app
             }
             catch
             {
-                MessageBox.Show(
-        "No se pudo cargar la imagen. Se mostrará una imagen predeterminada.",
-        "Imagen no disponible",
-        MessageBoxButtons.OK,
-        MessageBoxIcon.Warning
-                );
 
             }
         }
