@@ -36,6 +36,7 @@
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.lblContadorImagenes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,12 +121,23 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // lblContadorImagenes
+            // 
+            this.lblContadorImagenes.AutoSize = true;
+            this.lblContadorImagenes.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContadorImagenes.Location = new System.Drawing.Point(373, 475);
+            this.lblContadorImagenes.Name = "lblContadorImagenes";
+            this.lblContadorImagenes.Size = new System.Drawing.Size(38, 22);
+            this.lblContadorImagenes.TabIndex = 7;
+            this.lblContadorImagenes.Text = "0 / 0";
+            // 
             // frmDetalleArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(777, 592);
+            this.Controls.Add(this.lblContadorImagenes);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnSiguiente);
@@ -154,5 +166,6 @@
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label lblContadorImagenes;
     }
 }

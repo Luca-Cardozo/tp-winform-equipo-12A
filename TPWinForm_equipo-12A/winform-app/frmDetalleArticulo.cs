@@ -36,6 +36,7 @@ namespace winform_app
                                 MessageBoxIcon.Information);
 
                 pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
+                actualizarContadorImagenes();
                 return;
             }
 
@@ -46,6 +47,7 @@ namespace winform_app
                     try
                     {
                         pbxImagen.Load(img.ImagenUrl);
+                        actualizarContadorImagenes();
                         return;
                     }
                     catch
@@ -58,11 +60,8 @@ namespace winform_app
                         "Imágenes no disponibles",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-
             pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
-
-
-            
+            actualizarContadorImagenes();
         }
 
 
@@ -100,12 +99,13 @@ namespace winform_app
             }
             catch
             {
-
+                pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
             }
+            actualizarContadorImagenes();
         }
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (imagenes.Count == 0) return;
+            if (imagenes == null || imagenes.Count == 0) return;
             indiceImagen++;
             if (indiceImagen >= imagenes.Count) indiceImagen = 0;
             mostrarImagen();
@@ -113,7 +113,7 @@ namespace winform_app
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            if (imagenes.Count == 0) return;
+            if (imagenes == null || imagenes.Count == 0) return;
             indiceImagen--;
             if (indiceImagen < 0) indiceImagen = imagenes.Count - 1;
             mostrarImagen();
@@ -122,6 +122,14 @@ namespace winform_app
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void actualizarContadorImagenes()
+        {
+            if (imagenes != null && imagenes.Count > 0)
+                lblContadorImagenes.Text = (indiceImagen + 1).ToString() + " / " + imagenes.Count.ToString();
+            else
+                lblContadorImagenes.Text = "0 / 0";
         }
     }
 }
