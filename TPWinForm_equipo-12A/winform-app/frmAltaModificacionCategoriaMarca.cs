@@ -29,7 +29,7 @@ namespace winform_app
         {
             InitializeComponent();
 
-            if (data == "Marca")
+            if (data == "M")
             {
                 dataRecibida = "MenuMarca"; //para que sea mas facil modificar el codigo en caso de necesitarlo
                 this.Text = "Marca";

@@ -181,44 +181,20 @@ namespace winform_app
 
         private void filtrar()
         {
-            List<Articulo> listaFiltrada = listaArticulos;
 
-
-            if (!string.IsNullOrEmpty(txtFiltroRapido.Text))
-            {
-                listaFiltrada = listaFiltrada.FindAll(x =>
-            (x.Nombre != null && x.Nombre.ToUpper().Contains(txtFiltroRapido.Text.ToUpper()))
-                );
-            }
-            if (tscboCategorias.SelectedItem != null && tscboCategorias.SelectedItem.ToString() != "Todas")
-            {
-                string seleccion = tscboCategorias.SelectedItem.ToString();
-                listaFiltrada = listaFiltrada.FindAll(x =>
-                    x.Categoria != null && x.Categoria.Descripcion == seleccion
-                );
-            }
-            if (tscboMarcas.SelectedItem != null && tscboMarcas.SelectedItem.ToString() != "Todas")
-            {
-                string seleccion = tscboMarcas.SelectedItem.ToString();
-                listaFiltrada = listaFiltrada.FindAll(x =>
-                    x.Marca != null && x.Marca.Descripcion == seleccion
-                );
-            }
-
-            if (!string.IsNullOrEmpty(txtFiltroMarca.Text))
-            {
-                listaFiltrada = listaFiltrada.FindAll(x =>
-            (x.Marca != null && x.Marca.Descripcion.ToUpper().Contains(txtFiltroMarca.Text.ToUpper()))
-             );
-            }
-
-            if (!string.IsNullOrEmpty(txtFiltroCategoria.Text))
-            {
-                listaFiltrada = listaFiltrada.FindAll(x =>
-            (x.Categoria != null && x.Categoria.Descripcion.ToUpper().Contains(txtFiltroCategoria.Text.ToUpper()))
-             );
-            }
-
+            List<Articulo> listaFiltrada = listaArticulos.FindAll(x =>
+            // Nombre TextBox
+            (string.IsNullOrEmpty(txtFiltroRapido.Text) || (x.Nombre != null && x.Nombre.ToUpper().Contains(txtFiltroRapido.Text.ToUpper())))
+            // Marca TextBox
+            && (string.IsNullOrEmpty(txtFiltroMarca.Text) || (x.Marca != null && x.Marca.Descripcion.ToUpper().Contains(txtFiltroMarca.Text.ToUpper())))
+            // Categoría TextBox
+            && (string.IsNullOrEmpty(txtFiltroCategoria.Text) || (x.Categoria != null && x.Categoria.Descripcion.ToUpper().Contains(txtFiltroCategoria.Text.ToUpper())))
+            // Categoría ComboBox
+            && (tscboCategorias.SelectedItem == null || tscboCategorias.SelectedItem.ToString() == "Todas" || (x.Categoria != null && x.Categoria.Descripcion == tscboCategorias.SelectedItem.ToString()))
+            // Marca ComboBox
+            && (tscboMarcas.SelectedItem == null || tscboMarcas.SelectedItem.ToString() == "Todas" || (x.Marca != null && x.Marca.Descripcion == tscboMarcas.SelectedItem.ToString()))                  
+            );
+                        
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltrada;
             dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "C2";
@@ -297,43 +273,37 @@ namespace winform_app
 
         private void agregarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            string data = ctsCat.Text;
-            Form frm = new frmAltaModificacionCategoriaMarca(data, "Agregar");
+            Form frm = new frmAltaModificacionCategoriaMarca("C", "Agregar");
             frm.ShowDialog();
         }
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string data = ctsCat.Text;
-            Form frm = new frmAltaModificacionCategoriaMarca(data, "Modificar");
+            Form frm = new frmAltaModificacionCategoriaMarca("C", "Modificar");
             frm.ShowDialog();
         }
 
         private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            string data = ctsCat.Text;
-            Form frm = new frmAltaModificacionCategoriaMarca(data, "Eliminar");
+            Form frm = new frmAltaModificacionCategoriaMarca("C", "Eliminar");
             frm.ShowDialog();
         }
 
         private void agregarToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
-            string data = ctsMar.Text;
-            Form frm = new frmAltaModificacionCategoriaMarca(data, "Agregar");
+            Form frm = new frmAltaModificacionCategoriaMarca("M", "Agregar");
             frm.ShowDialog();
         }
 
         private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            string data = ctsMar.Text;
-            Form frm = new frmAltaModificacionCategoriaMarca(data, "Modificar");
+            Form frm = new frmAltaModificacionCategoriaMarca("M", "Modificar");
             frm.ShowDialog();
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string data = ctsMar.Text;
-            Form frm = new frmAltaModificacionCategoriaMarca(data, "Eliminar");
+            Form frm = new frmAltaModificacionCategoriaMarca("M", "Eliminar");
             frm.ShowDialog();
         }
 
